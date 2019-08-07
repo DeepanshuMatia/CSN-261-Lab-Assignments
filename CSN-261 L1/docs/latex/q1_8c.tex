@@ -1,0 +1,516 @@
+\hypertarget{q1_8c}{}\doxysection{q1.\+c File Reference}
+\label{q1_8c}\index{q1.c@{q1.c}}
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structNode}{Node}}
+\begin{DoxyCompactList}\small\item\em Creating node for linked list. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{q1_8c_a79032b6d3be974aeefb055bbe306dee2}{insert}} (int roll\+\_\+no, char Name\mbox{[}$\,$\mbox{]}, char dob\mbox{[}$\,$\mbox{]}, char address\mbox{[}$\,$\mbox{]}, long long int phone\+\_\+no)
+\begin{DoxyCompactList}\small\item\em To insert data from the file to the doubly linked list. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structNode}{Node}} $\ast$ \mbox{\hyperlink{q1_8c_a87c101ae9c148d976cf277e0c7c4bce4}{Search\+Roll\+No}} (int roll\+\_\+no)
+\begin{DoxyCompactList}\small\item\em To search a roll number in the doubly linked list. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{q1_8c_a8a3757e3cfa54c09eb60360b35b2e917}{Store\+Unused\+Roll\+No}} (int roll\+\_\+no)
+\begin{DoxyCompactList}\small\item\em to store the roll numbers deleted from the list. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{q1_8c_aacb5c732d526c45cdb12676916e89140}{Delete}} (int roll\+\_\+no)
+\begin{DoxyCompactList}\small\item\em To delete a student from the list. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{q1_8c_a53c1d6153092d0653894323dc4061353}{Swap\+\_\+\+Nodes}} (struct \mbox{\hyperlink{structNode}{Node}} $\ast$node1, struct \mbox{\hyperlink{structNode}{Node}} $\ast$node2)
+\begin{DoxyCompactList}\small\item\em To swap the data of two nodes. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{q1_8c_a529ec70f00b1aad391d683ce0fa013c6}{Print\+\_\+data}} ()
+\begin{DoxyCompactList}\small\item\em To print the contents of the doubly linked list. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{q1_8c_a16af310ad608852c74a4b3c1f5c694c9}{sort\+By\+Name}} ()
+\begin{DoxyCompactList}\small\item\em To albhabetically sort the students on the basis of their name. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{q1_8c_ab98143f9cbf4972a657c0367edb2a3be}{Modify}} (int roll\+\_\+no, int instruction, char value\mbox{[}$\,$\mbox{]})
+\begin{DoxyCompactList}\small\item\em To modify he contents of any node in the linked list. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{q1_8c_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{q1_8c_a753bcb11817ec805b773ab74c1601143}{unusedrollno}} \mbox{[}10\mbox{]}
+\item 
+int \mbox{\hyperlink{q1_8c_af866be352de659d624986cb76b8d45b6}{rear}} =-\/1
+\item 
+struct \mbox{\hyperlink{structNode}{Node}} $\ast$ \mbox{\hyperlink{q1_8c_ae959b310460c42ab25a11f7680421d52}{head}} =N\+U\+LL
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{q1_8c_aacb5c732d526c45cdb12676916e89140}\label{q1_8c_aacb5c732d526c45cdb12676916e89140}} 
+\index{q1.c@{q1.c}!Delete@{Delete}}
+\index{Delete@{Delete}!q1.c@{q1.c}}
+\doxysubsubsection{\texorpdfstring{Delete()}{Delete()}}
+{\footnotesize\ttfamily void Delete (\begin{DoxyParamCaption}\item[{int}]{roll\+\_\+no }\end{DoxyParamCaption})}
+
+
+
+To delete a student from the list. 
+
+
+
+Definition at line 84 of file q1.\+c.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{84                         \{}
+\DoxyCodeLine{85     \textcolor{keywordflow}{if} (\mbox{\hyperlink{q1_8c_ae959b310460c42ab25a11f7680421d52}{head}}==NULL) printf(\textcolor{stringliteral}{"\%s\(\backslash\)n"}, \textcolor{stringliteral}{"No element is present in the list. \(\backslash\)n"} );}
+\DoxyCodeLine{86     \textcolor{keyword}{struct }\mbox{\hyperlink{structNode}{Node}}* temp= \mbox{\hyperlink{q1_8c_a87c101ae9c148d976cf277e0c7c4bce4}{SearchRollNo}}(\mbox{\hyperlink{structNode_afe98e143da0a3b956ec2b2c2c0b24bc1}{roll\_no}});}
+\DoxyCodeLine{87     \textcolor{keywordflow}{if} (temp == NULL) \{}
+\DoxyCodeLine{88         printf(\textcolor{stringliteral}{"\%s\(\backslash\)n"},\textcolor{stringliteral}{"This enrollment number is not prsesent in the list. \(\backslash\)n"} );}
+\DoxyCodeLine{89         \textcolor{keywordflow}{return};}
+\DoxyCodeLine{90     \}}
+\DoxyCodeLine{91     \textcolor{keywordflow}{if} (temp == \mbox{\hyperlink{q1_8c_ae959b310460c42ab25a11f7680421d52}{head}}) \{}
+\DoxyCodeLine{92         \mbox{\hyperlink{q1_8c_ae959b310460c42ab25a11f7680421d52}{head}} -\/> \mbox{\hyperlink{structNode_aea9fefc3628c3ce98b967e8addf06e88}{prev}} -\/> \mbox{\hyperlink{structNode_af67b110ca1a258b793bf69d306929b22}{next}} = temp -\/> \mbox{\hyperlink{structNode_af67b110ca1a258b793bf69d306929b22}{next}};}
+\DoxyCodeLine{93         temp -\/> \mbox{\hyperlink{structNode_af67b110ca1a258b793bf69d306929b22}{next}} -\/> \mbox{\hyperlink{structNode_aea9fefc3628c3ce98b967e8addf06e88}{prev}} = temp -\/> \mbox{\hyperlink{structNode_aea9fefc3628c3ce98b967e8addf06e88}{prev}};}
+\DoxyCodeLine{94         \mbox{\hyperlink{q1_8c_ae959b310460c42ab25a11f7680421d52}{head}} = temp -\/> \mbox{\hyperlink{structNode_af67b110ca1a258b793bf69d306929b22}{next}};}
+\DoxyCodeLine{95         \mbox{\hyperlink{q1_8c_af866be352de659d624986cb76b8d45b6}{rear}}++;}
+\DoxyCodeLine{96         \mbox{\hyperlink{q1_8c_a753bcb11817ec805b773ab74c1601143}{unusedrollno}}[\mbox{\hyperlink{q1_8c_af866be352de659d624986cb76b8d45b6}{rear}}] = temp -\/> \mbox{\hyperlink{structNode_afe98e143da0a3b956ec2b2c2c0b24bc1}{roll\_no}}; }
+\DoxyCodeLine{97         free (temp);}
+\DoxyCodeLine{98         printf(\textcolor{stringliteral}{"Enrollment number \%d deleted successfully. \(\backslash\)n"}, \mbox{\hyperlink{structNode_afe98e143da0a3b956ec2b2c2c0b24bc1}{roll\_no}} );}
+\DoxyCodeLine{99     \}}
+\DoxyCodeLine{100     \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{101         \mbox{\hyperlink{q1_8c_ae959b310460c42ab25a11f7680421d52}{head}} -\/> \mbox{\hyperlink{structNode_aea9fefc3628c3ce98b967e8addf06e88}{prev}} -\/> \mbox{\hyperlink{structNode_af67b110ca1a258b793bf69d306929b22}{next}} = temp -\/> \mbox{\hyperlink{structNode_af67b110ca1a258b793bf69d306929b22}{next}};}
+\DoxyCodeLine{102         temp -\/> \mbox{\hyperlink{structNode_af67b110ca1a258b793bf69d306929b22}{next}} -\/> \mbox{\hyperlink{structNode_aea9fefc3628c3ce98b967e8addf06e88}{prev}} = temp -\/> \mbox{\hyperlink{structNode_aea9fefc3628c3ce98b967e8addf06e88}{prev}};}
+\DoxyCodeLine{103         \mbox{\hyperlink{q1_8c_af866be352de659d624986cb76b8d45b6}{rear}}++;}
+\DoxyCodeLine{104         \mbox{\hyperlink{q1_8c_a753bcb11817ec805b773ab74c1601143}{unusedrollno}}[\mbox{\hyperlink{q1_8c_af866be352de659d624986cb76b8d45b6}{rear}}] = temp -\/> \mbox{\hyperlink{structNode_afe98e143da0a3b956ec2b2c2c0b24bc1}{roll\_no}}; }
+\DoxyCodeLine{105         free(temp);}
+\DoxyCodeLine{106         printf(\textcolor{stringliteral}{"Enrollment number \%d deleted successfully.\(\backslash\)n"}, \mbox{\hyperlink{structNode_afe98e143da0a3b956ec2b2c2c0b24bc1}{roll\_no}} );}
+\DoxyCodeLine{107     \}}
+\DoxyCodeLine{108 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{q1_8c_a79032b6d3be974aeefb055bbe306dee2}\label{q1_8c_a79032b6d3be974aeefb055bbe306dee2}} 
+\index{q1.c@{q1.c}!insert@{insert}}
+\index{insert@{insert}!q1.c@{q1.c}}
+\doxysubsubsection{\texorpdfstring{insert()}{insert()}}
+{\footnotesize\ttfamily void insert (\begin{DoxyParamCaption}\item[{int}]{roll\+\_\+no,  }\item[{char}]{Name\mbox{[}$\,$\mbox{]},  }\item[{char}]{dob\mbox{[}$\,$\mbox{]},  }\item[{char}]{address\mbox{[}$\,$\mbox{]},  }\item[{long long int}]{phone\+\_\+no }\end{DoxyParamCaption})}
+
+
+
+To insert data from the file to the doubly linked list. 
+
+
+
+Definition at line 23 of file q1.\+c.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{23                                                                                          \{}
+\DoxyCodeLine{24 }
+\DoxyCodeLine{25     \textcolor{keyword}{struct }\mbox{\hyperlink{structNode}{Node}}* \textcolor{keyword}{new}=(\textcolor{keyword}{struct }\mbox{\hyperlink{structNode}{Node}}*)malloc(\textcolor{keyword}{sizeof}(\textcolor{keyword}{struct} \mbox{\hyperlink{structNode}{Node}}*));}
+\DoxyCodeLine{26 }
+\DoxyCodeLine{27     \textcolor{keyword}{new} -\/> \mbox{\hyperlink{structNode_afe98e143da0a3b956ec2b2c2c0b24bc1}{roll\_no}} = \mbox{\hyperlink{structNode_afe98e143da0a3b956ec2b2c2c0b24bc1}{roll\_no}};}
+\DoxyCodeLine{28     \textcolor{keyword}{new} -\/> \mbox{\hyperlink{structNode_aeec0e0200cf6f9dfd8bc5940acd30b1e}{phone\_no}} = \mbox{\hyperlink{structNode_aeec0e0200cf6f9dfd8bc5940acd30b1e}{phone\_no}};}
+\DoxyCodeLine{29     strcpy(\textcolor{keyword}{new} -\/> \mbox{\hyperlink{structNode_aaa65a8deba665a1e223987e29def7d4f}{dob}}, \mbox{\hyperlink{structNode_aaa65a8deba665a1e223987e29def7d4f}{dob}});}
+\DoxyCodeLine{30     strcpy(\textcolor{keyword}{new} -\/> \mbox{\hyperlink{structNode_a097e71641354dab4e0e6e861ff4bcb4a}{Name}}, \mbox{\hyperlink{structNode_a097e71641354dab4e0e6e861ff4bcb4a}{Name}});}
+\DoxyCodeLine{31     strcpy(\textcolor{keyword}{new} -\/> \mbox{\hyperlink{structNode_ad6d30c883034486415179fc8241f9483}{address}}, \mbox{\hyperlink{structNode_ad6d30c883034486415179fc8241f9483}{address}});}
+\DoxyCodeLine{32 }
+\DoxyCodeLine{33     \textcolor{keywordflow}{if} (\mbox{\hyperlink{q1_8c_ae959b310460c42ab25a11f7680421d52}{head}}==NULL)\{}
+\DoxyCodeLine{34     \textcolor{keyword}{new} -\/> \mbox{\hyperlink{structNode_aea9fefc3628c3ce98b967e8addf06e88}{prev}} = \textcolor{keyword}{new};}
+\DoxyCodeLine{35     \textcolor{keyword}{new} -\/> \mbox{\hyperlink{structNode_af67b110ca1a258b793bf69d306929b22}{next}} = \textcolor{keyword}{new};}
+\DoxyCodeLine{36     \mbox{\hyperlink{q1_8c_ae959b310460c42ab25a11f7680421d52}{head}} = \textcolor{keyword}{new};     }
+\DoxyCodeLine{37     \}}
+\DoxyCodeLine{38     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (\textcolor{keyword}{new} -\/> roll\_no < head -\/> \mbox{\hyperlink{structNode_afe98e143da0a3b956ec2b2c2c0b24bc1}{roll\_no}})\{}
+\DoxyCodeLine{39             \textcolor{keyword}{new} -\/> \mbox{\hyperlink{structNode_aea9fefc3628c3ce98b967e8addf06e88}{prev}} = \mbox{\hyperlink{q1_8c_ae959b310460c42ab25a11f7680421d52}{head}} -\/> \mbox{\hyperlink{structNode_aea9fefc3628c3ce98b967e8addf06e88}{prev}};}
+\DoxyCodeLine{40             \textcolor{keyword}{new} -\/> \mbox{\hyperlink{structNode_af67b110ca1a258b793bf69d306929b22}{next}} = \mbox{\hyperlink{q1_8c_ae959b310460c42ab25a11f7680421d52}{head}};}
+\DoxyCodeLine{41             \textcolor{keyword}{new} -\/> \mbox{\hyperlink{structNode_aea9fefc3628c3ce98b967e8addf06e88}{prev}} -\/> \mbox{\hyperlink{structNode_af67b110ca1a258b793bf69d306929b22}{next}} = \textcolor{keyword}{new};}
+\DoxyCodeLine{42             \mbox{\hyperlink{q1_8c_ae959b310460c42ab25a11f7680421d52}{head}} -\/> \mbox{\hyperlink{structNode_aea9fefc3628c3ce98b967e8addf06e88}{prev}} = \textcolor{keyword}{new};}
+\DoxyCodeLine{43             \mbox{\hyperlink{q1_8c_ae959b310460c42ab25a11f7680421d52}{head}} = \mbox{\hyperlink{q1_8c_ae959b310460c42ab25a11f7680421d52}{head}} -\/> \mbox{\hyperlink{structNode_aea9fefc3628c3ce98b967e8addf06e88}{prev}};}
+\DoxyCodeLine{44         \}}
+\DoxyCodeLine{45         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (\mbox{\hyperlink{q1_8c_ae959b310460c42ab25a11f7680421d52}{head}} -\/> roll\_no < new -\/> \mbox{\hyperlink{structNode_afe98e143da0a3b956ec2b2c2c0b24bc1}{roll\_no}})\{}
+\DoxyCodeLine{46             \textcolor{keyword}{struct }\mbox{\hyperlink{structNode}{Node}}* temp = \mbox{\hyperlink{q1_8c_ae959b310460c42ab25a11f7680421d52}{head}} -\/> \mbox{\hyperlink{structNode_af67b110ca1a258b793bf69d306929b22}{next}};}
+\DoxyCodeLine{47             \textcolor{keywordflow}{for} (temp = \mbox{\hyperlink{q1_8c_ae959b310460c42ab25a11f7680421d52}{head}} -\/> \mbox{\hyperlink{structNode_af67b110ca1a258b793bf69d306929b22}{next}} ; temp != \mbox{\hyperlink{q1_8c_ae959b310460c42ab25a11f7680421d52}{head}} ; temp = temp -\/> \mbox{\hyperlink{structNode_af67b110ca1a258b793bf69d306929b22}{next}})\{}
+\DoxyCodeLine{48                 \textcolor{keywordflow}{if} (\textcolor{keyword}{new} -\/> roll\_no < temp -\/> \mbox{\hyperlink{structNode_afe98e143da0a3b956ec2b2c2c0b24bc1}{roll\_no}})\{}
+\DoxyCodeLine{49                     \textcolor{keyword}{new} -\/> \mbox{\hyperlink{structNode_aea9fefc3628c3ce98b967e8addf06e88}{prev}} = temp -\/> \mbox{\hyperlink{structNode_aea9fefc3628c3ce98b967e8addf06e88}{prev}};}
+\DoxyCodeLine{50                     \textcolor{keyword}{new} -\/> \mbox{\hyperlink{structNode_af67b110ca1a258b793bf69d306929b22}{next}} = temp;}
+\DoxyCodeLine{51                     temp -\/> \mbox{\hyperlink{structNode_aea9fefc3628c3ce98b967e8addf06e88}{prev}} -\/> \mbox{\hyperlink{structNode_af67b110ca1a258b793bf69d306929b22}{next}} = \textcolor{keyword}{new};}
+\DoxyCodeLine{52                     temp -\/> \mbox{\hyperlink{structNode_aea9fefc3628c3ce98b967e8addf06e88}{prev}} = \textcolor{keyword}{new};}
+\DoxyCodeLine{53                     \textcolor{keywordflow}{break}; }
+\DoxyCodeLine{54                 \}}
+\DoxyCodeLine{55             \}   }
+\DoxyCodeLine{56         \}}
+\DoxyCodeLine{57         \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{58             \mbox{\hyperlink{q1_8c_ae959b310460c42ab25a11f7680421d52}{head}} -\/> \mbox{\hyperlink{structNode_aea9fefc3628c3ce98b967e8addf06e88}{prev}} -\/> \mbox{\hyperlink{structNode_af67b110ca1a258b793bf69d306929b22}{next}} = \textcolor{keyword}{new};}
+\DoxyCodeLine{59             \textcolor{keyword}{new} -\/> \mbox{\hyperlink{structNode_aea9fefc3628c3ce98b967e8addf06e88}{prev}} = \mbox{\hyperlink{q1_8c_ae959b310460c42ab25a11f7680421d52}{head}} -\/> \mbox{\hyperlink{structNode_aea9fefc3628c3ce98b967e8addf06e88}{prev}};}
+\DoxyCodeLine{60             \textcolor{keyword}{new} -\/> \mbox{\hyperlink{structNode_af67b110ca1a258b793bf69d306929b22}{next}} = \mbox{\hyperlink{q1_8c_ae959b310460c42ab25a11f7680421d52}{head}};}
+\DoxyCodeLine{61             \mbox{\hyperlink{q1_8c_ae959b310460c42ab25a11f7680421d52}{head}} -\/> \mbox{\hyperlink{structNode_aea9fefc3628c3ce98b967e8addf06e88}{prev}} = \textcolor{keyword}{new};}
+\DoxyCodeLine{62         \}}
+\DoxyCodeLine{63 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{q1_8c_ae66f6b31b5ad750f1fe042a706a4e3d4}\label{q1_8c_ae66f6b31b5ad750f1fe042a706a4e3d4}} 
+\index{q1.c@{q1.c}!main@{main}}
+\index{main@{main}!q1.c@{q1.c}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 208 of file q1.\+c.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{208            \{}
+\DoxyCodeLine{209 }
+\DoxyCodeLine{210 }
+\DoxyCodeLine{211      \textcolor{keywordtype}{int} ROLL\_NO = 101 ;}
+\DoxyCodeLine{212      \textcolor{keywordtype}{int} instruction;}
+\DoxyCodeLine{213      }
+\DoxyCodeLine{214     \textcolor{keywordflow}{do}}
+\DoxyCodeLine{215     \{}
+\DoxyCodeLine{216      }
+\DoxyCodeLine{217         printf(\textcolor{stringliteral}{"\%s"}, \textcolor{stringliteral}{"Enter 1 to insert information from file \(\backslash\)n"});}
+\DoxyCodeLine{218         printf(\textcolor{stringliteral}{"\%s"}, \textcolor{stringliteral}{"Enter 2 to modify the information\(\backslash\)n"});}
+\DoxyCodeLine{219         printf(\textcolor{stringliteral}{"\%s"}, \textcolor{stringliteral}{"Enter 3 to delete some information\(\backslash\)n"});}
+\DoxyCodeLine{220         printf(\textcolor{stringliteral}{"\%s"}, \textcolor{stringliteral}{"Enter 4 to sort the students name alphabetically \(\backslash\)n"});}
+\DoxyCodeLine{221         printf(\textcolor{stringliteral}{"\%s"}, \textcolor{stringliteral}{"Enter 5 to print the list \(\backslash\)n"});}
+\DoxyCodeLine{222         printf(\textcolor{stringliteral}{"\%s"}, \textcolor{stringliteral}{"Enter 6 to exit the program...\(\backslash\)n"});}
+\DoxyCodeLine{223 }
+\DoxyCodeLine{224         scanf(\textcolor{stringliteral}{"\%d"}, \&instruction);}
+\DoxyCodeLine{225         \textcolor{keywordtype}{int} i = 1;}
+\DoxyCodeLine{226 }
+\DoxyCodeLine{227         \textcolor{keywordflow}{switch}(instruction) \{}
+\DoxyCodeLine{228             \textcolor{keywordflow}{case} 1: \{}
+\DoxyCodeLine{229                 \textcolor{keywordtype}{char} \mbox{\hyperlink{structNode_a097e71641354dab4e0e6e861ff4bcb4a}{Name}}[20], \mbox{\hyperlink{structNode_aaa65a8deba665a1e223987e29def7d4f}{dob}}[20], \mbox{\hyperlink{structNode_ad6d30c883034486415179fc8241f9483}{address}}[200];}
+\DoxyCodeLine{230                 \textcolor{keywordtype}{long} \textcolor{keywordtype}{long} \textcolor{keywordtype}{int} \mbox{\hyperlink{structNode_aeec0e0200cf6f9dfd8bc5940acd30b1e}{phone\_no}};}
+\DoxyCodeLine{231                 }
+\DoxyCodeLine{232                 \textcolor{keywordtype}{char} filename[31] = \textcolor{stringliteral}{"StudentData.csv"};}
+\DoxyCodeLine{233                 \textcolor{keywordtype}{char} buff\_string[1024];}
+\DoxyCodeLine{234         }
+\DoxyCodeLine{235                 FILE *file = fopen(filename, \textcolor{stringliteral}{"r"});}
+\DoxyCodeLine{236                 fgets(buff\_string, \textcolor{keyword}{sizeof}(buff\_string), file); }
+\DoxyCodeLine{237                 \textcolor{keywordtype}{int} num;}
+\DoxyCodeLine{238                 printf(\textcolor{stringliteral}{"Enter the student number whose data you want to insert\(\backslash\)n"});}
+\DoxyCodeLine{239                 scanf(\textcolor{stringliteral}{"\%d"},\&num);}
+\DoxyCodeLine{240                     \textcolor{keywordflow}{while}( i<=num)\{}
+\DoxyCodeLine{241                     fgets(buff\_string, \textcolor{keyword}{sizeof}(buff\_string), file);}
+\DoxyCodeLine{242                     \textcolor{keywordtype}{char} *data = strtok(buff\_string, \textcolor{stringliteral}{","}); }
+\DoxyCodeLine{243                     data = strtok(NULL, \textcolor{stringliteral}{","});}
+\DoxyCodeLine{244                     strcpy(\mbox{\hyperlink{structNode_a097e71641354dab4e0e6e861ff4bcb4a}{Name}}, data);}
+\DoxyCodeLine{245                     data = strtok(NULL, \textcolor{stringliteral}{","});}
+\DoxyCodeLine{246                     strcpy(\mbox{\hyperlink{structNode_aaa65a8deba665a1e223987e29def7d4f}{dob}}, data);}
+\DoxyCodeLine{247                     data = strtok(NULL, \textcolor{stringliteral}{"\(\backslash\)""});  }
+\DoxyCodeLine{248                     strcpy(\mbox{\hyperlink{structNode_ad6d30c883034486415179fc8241f9483}{address}}, data);}
+\DoxyCodeLine{249                     data = strtok(NULL, \textcolor{stringliteral}{","});}
+\DoxyCodeLine{250                     \mbox{\hyperlink{structNode_aeec0e0200cf6f9dfd8bc5940acd30b1e}{phone\_no}} = atoll(data);}
+\DoxyCodeLine{251                     i++;}
+\DoxyCodeLine{252                     \}}
+\DoxyCodeLine{253                     \textcolor{keywordflow}{if}(\mbox{\hyperlink{q1_8c_af866be352de659d624986cb76b8d45b6}{rear}} == -\/1) \{ }
+\DoxyCodeLine{254                         \mbox{\hyperlink{q1_8c_a79032b6d3be974aeefb055bbe306dee2}{insert}}(ROLL\_NO, \mbox{\hyperlink{structNode_a097e71641354dab4e0e6e861ff4bcb4a}{Name}}, \mbox{\hyperlink{structNode_aaa65a8deba665a1e223987e29def7d4f}{dob}}, \mbox{\hyperlink{structNode_ad6d30c883034486415179fc8241f9483}{address}}, \mbox{\hyperlink{structNode_aeec0e0200cf6f9dfd8bc5940acd30b1e}{phone\_no}});}
+\DoxyCodeLine{255                         ROLL\_NO++;}
+\DoxyCodeLine{256                     \}}
+\DoxyCodeLine{257                     \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{258                         \textcolor{keywordtype}{int} enroll = \mbox{\hyperlink{q1_8c_a753bcb11817ec805b773ab74c1601143}{unusedrollno}}[0];}
+\DoxyCodeLine{259                         \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} a=0; a < \mbox{\hyperlink{q1_8c_af866be352de659d624986cb76b8d45b6}{rear}} ; a++)\{}
+\DoxyCodeLine{260                             \mbox{\hyperlink{q1_8c_a753bcb11817ec805b773ab74c1601143}{unusedrollno}}[a] = \mbox{\hyperlink{q1_8c_a753bcb11817ec805b773ab74c1601143}{unusedrollno}}[a+1];}
+\DoxyCodeLine{261                             \mbox{\hyperlink{q1_8c_af866be352de659d624986cb76b8d45b6}{rear}}-\/-\/;}
+\DoxyCodeLine{262                         \}}
+\DoxyCodeLine{263                         \mbox{\hyperlink{q1_8c_a79032b6d3be974aeefb055bbe306dee2}{insert}}(enroll , \mbox{\hyperlink{structNode_a097e71641354dab4e0e6e861ff4bcb4a}{Name}}, \mbox{\hyperlink{structNode_aaa65a8deba665a1e223987e29def7d4f}{dob}}, \mbox{\hyperlink{structNode_ad6d30c883034486415179fc8241f9483}{address}}, \mbox{\hyperlink{structNode_aeec0e0200cf6f9dfd8bc5940acd30b1e}{phone\_no}});}
+\DoxyCodeLine{264                         }
+\DoxyCodeLine{265 }
+\DoxyCodeLine{266                     \}}
+\DoxyCodeLine{267                 printf(\textcolor{stringliteral}{"Information successfully inserted in the list !\(\backslash\)n"});}
+\DoxyCodeLine{268                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{269             \}}
+\DoxyCodeLine{270             \textcolor{keywordflow}{case} 2 : }
+\DoxyCodeLine{271             \{}
+\DoxyCodeLine{272                 \textcolor{keywordtype}{char} val[200];}
+\DoxyCodeLine{273                 \textcolor{keywordtype}{int} \mbox{\hyperlink{structNode_afe98e143da0a3b956ec2b2c2c0b24bc1}{roll\_no}}, instruction;}
+\DoxyCodeLine{274 }
+\DoxyCodeLine{275                 printf(\textcolor{stringliteral}{"\%s\(\backslash\)n"}, \textcolor{stringliteral}{"Enter 1 to change the Name"});}
+\DoxyCodeLine{276                 printf(\textcolor{stringliteral}{"\%s\(\backslash\)n"}, \textcolor{stringliteral}{"Enter 2 to change the Date of Birth"});}
+\DoxyCodeLine{277                 printf(\textcolor{stringliteral}{"\%s\(\backslash\)n"}, \textcolor{stringliteral}{"Enter 3 to change the Address"});}
+\DoxyCodeLine{278                 printf(\textcolor{stringliteral}{"\%s\(\backslash\)n"}, \textcolor{stringliteral}{"Enter 4 to change the Phone Number"});}
+\DoxyCodeLine{279                 scanf(\textcolor{stringliteral}{"\%d"}, \&instruction);}
+\DoxyCodeLine{280 }
+\DoxyCodeLine{281                 printf(\textcolor{stringliteral}{"\%s\(\backslash\)n"}, \textcolor{stringliteral}{"Enter Roll number: "});}
+\DoxyCodeLine{282                 scanf(\textcolor{stringliteral}{"\%d"}, \&\mbox{\hyperlink{structNode_afe98e143da0a3b956ec2b2c2c0b24bc1}{roll\_no}});}
+\DoxyCodeLine{283                 }
+\DoxyCodeLine{284                 printf(\textcolor{stringliteral}{"\%s\(\backslash\)n"}, \textcolor{stringliteral}{"Enter new value: "});}
+\DoxyCodeLine{285                 scanf(\textcolor{stringliteral}{"\%s\(\backslash\)n"},val);}
+\DoxyCodeLine{286                 \mbox{\hyperlink{q1_8c_ab98143f9cbf4972a657c0367edb2a3be}{Modify}}(\mbox{\hyperlink{structNode_afe98e143da0a3b956ec2b2c2c0b24bc1}{roll\_no}}, instruction, val);}
+\DoxyCodeLine{287                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{288             \}}
+\DoxyCodeLine{289 }
+\DoxyCodeLine{290             \textcolor{keywordflow}{case} 3 : \{}
+\DoxyCodeLine{291                 \textcolor{keywordtype}{int} \mbox{\hyperlink{structNode_afe98e143da0a3b956ec2b2c2c0b24bc1}{roll\_no}};}
+\DoxyCodeLine{292                 printf(\textcolor{stringliteral}{"\%s\(\backslash\)n"}, \textcolor{stringliteral}{"Enter Roll number: "});}
+\DoxyCodeLine{293                 scanf(\textcolor{stringliteral}{"\%d"}, \&\mbox{\hyperlink{structNode_afe98e143da0a3b956ec2b2c2c0b24bc1}{roll\_no}});}
+\DoxyCodeLine{294                 \mbox{\hyperlink{q1_8c_a8a3757e3cfa54c09eb60360b35b2e917}{StoreUnusedRollNo}}(\mbox{\hyperlink{structNode_afe98e143da0a3b956ec2b2c2c0b24bc1}{roll\_no}});}
+\DoxyCodeLine{295                 \mbox{\hyperlink{q1_8c_aacb5c732d526c45cdb12676916e89140}{Delete}}(\mbox{\hyperlink{structNode_afe98e143da0a3b956ec2b2c2c0b24bc1}{roll\_no}});}
+\DoxyCodeLine{296                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{297             \}}
+\DoxyCodeLine{298 }
+\DoxyCodeLine{299             \textcolor{keywordflow}{case} 4 : \{}
+\DoxyCodeLine{300                 \mbox{\hyperlink{q1_8c_a16af310ad608852c74a4b3c1f5c694c9}{sortByName}}();}
+\DoxyCodeLine{301                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{302             \}    }
+\DoxyCodeLine{303 }
+\DoxyCodeLine{304             \textcolor{keywordflow}{case} 5 : \{}
+\DoxyCodeLine{305                 \mbox{\hyperlink{q1_8c_a529ec70f00b1aad391d683ce0fa013c6}{Print\_data}}();}
+\DoxyCodeLine{306                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{307             \}}
+\DoxyCodeLine{308 }
+\DoxyCodeLine{309             \textcolor{keywordflow}{case} 6 : \{}
+\DoxyCodeLine{310                 \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{311             \}}
+\DoxyCodeLine{312 }
+\DoxyCodeLine{313             \textcolor{keywordflow}{default}: \{}
+\DoxyCodeLine{314                 printf(\textcolor{stringliteral}{"Please enter a valid instruction.\(\backslash\)n"});}
+\DoxyCodeLine{315             \}}
+\DoxyCodeLine{316         \}}
+\DoxyCodeLine{317     \}}
+\DoxyCodeLine{318     \textcolor{keywordflow}{while}(instruction!=6);            }
+\DoxyCodeLine{319     \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{320 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{q1_8c_ab98143f9cbf4972a657c0367edb2a3be}\label{q1_8c_ab98143f9cbf4972a657c0367edb2a3be}} 
+\index{q1.c@{q1.c}!Modify@{Modify}}
+\index{Modify@{Modify}!q1.c@{q1.c}}
+\doxysubsubsection{\texorpdfstring{Modify()}{Modify()}}
+{\footnotesize\ttfamily void Modify (\begin{DoxyParamCaption}\item[{int}]{roll\+\_\+no,  }\item[{int}]{instruction,  }\item[{char}]{value\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
+
+
+
+To modify he contents of any node in the linked list. 
+
+
+
+Definition at line 180 of file q1.\+c.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{180                                                          \{}
+\DoxyCodeLine{181 }
+\DoxyCodeLine{182    \textcolor{keyword}{struct }\mbox{\hyperlink{structNode}{Node}}* temp = \mbox{\hyperlink{q1_8c_a87c101ae9c148d976cf277e0c7c4bce4}{SearchRollNo}}(\mbox{\hyperlink{structNode_afe98e143da0a3b956ec2b2c2c0b24bc1}{roll\_no}});}
+\DoxyCodeLine{183 }
+\DoxyCodeLine{184    \textcolor{keywordflow}{if} ( temp == NULL) }
+\DoxyCodeLine{185     \{ }
+\DoxyCodeLine{186         printf(\textcolor{stringliteral}{"Enrollment number not found\(\backslash\)n"}); }
+\DoxyCodeLine{187         \textcolor{keywordflow}{return}; }
+\DoxyCodeLine{188     \}}
+\DoxyCodeLine{189     }
+\DoxyCodeLine{190     \textcolor{keywordflow}{if} (instruction == 1) }
+\DoxyCodeLine{191         strcpy( temp -\/> \mbox{\hyperlink{structNode_a097e71641354dab4e0e6e861ff4bcb4a}{Name}} , value);}
+\DoxyCodeLine{192     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} ( instruction == 2) }
+\DoxyCodeLine{193         strcpy( temp -\/> \mbox{\hyperlink{structNode_aaa65a8deba665a1e223987e29def7d4f}{dob}} , value);}
+\DoxyCodeLine{194     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} ( instruction == 3) }
+\DoxyCodeLine{195         strcpy( temp -\/> \mbox{\hyperlink{structNode_ad6d30c883034486415179fc8241f9483}{address}} , value);}
+\DoxyCodeLine{196     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} ( instruction == 4) }
+\DoxyCodeLine{197         temp -\/> \mbox{\hyperlink{structNode_aeec0e0200cf6f9dfd8bc5940acd30b1e}{phone\_no}} = atoll(value);}
+\DoxyCodeLine{198     \textcolor{keywordflow}{else} }
+\DoxyCodeLine{199         \{}
+\DoxyCodeLine{200             printf(\textcolor{stringliteral}{"Please insert valid instruction.\(\backslash\)n"});}
+\DoxyCodeLine{201             \textcolor{keywordflow}{return};}
+\DoxyCodeLine{202         \}}
+\DoxyCodeLine{203 }
+\DoxyCodeLine{204     printf(\textcolor{stringliteral}{"Given instruction is successfully Updated.\(\backslash\)n"});}
+\DoxyCodeLine{205 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{q1_8c_a529ec70f00b1aad391d683ce0fa013c6}\label{q1_8c_a529ec70f00b1aad391d683ce0fa013c6}} 
+\index{q1.c@{q1.c}!Print\_data@{Print\_data}}
+\index{Print\_data@{Print\_data}!q1.c@{q1.c}}
+\doxysubsubsection{\texorpdfstring{Print\_data()}{Print\_data()}}
+{\footnotesize\ttfamily void Print\+\_\+data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+To print the contents of the doubly linked list. 
+
+
+
+Definition at line 136 of file q1.\+c.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{136                  \{}
+\DoxyCodeLine{137 }
+\DoxyCodeLine{138     \textcolor{keyword}{struct }\mbox{\hyperlink{structNode}{Node}}* temp = (\textcolor{keyword}{struct }\mbox{\hyperlink{structNode}{Node}}*)malloc(\textcolor{keyword}{sizeof}(\textcolor{keyword}{struct} \mbox{\hyperlink{structNode}{Node}}*));}
+\DoxyCodeLine{139     temp = \mbox{\hyperlink{q1_8c_ae959b310460c42ab25a11f7680421d52}{head}};}
+\DoxyCodeLine{140 }
+\DoxyCodeLine{141     printf(\textcolor{stringliteral}{"Name : \%s \(\backslash\)n"}, temp-\/>\mbox{\hyperlink{structNode_a097e71641354dab4e0e6e861ff4bcb4a}{Name}});}
+\DoxyCodeLine{142     printf(\textcolor{stringliteral}{"Enrollment no. : \%d\(\backslash\)n"}, temp-\/>\mbox{\hyperlink{structNode_afe98e143da0a3b956ec2b2c2c0b24bc1}{roll\_no}});}
+\DoxyCodeLine{143     printf(\textcolor{stringliteral}{"Date of Birth : \%s \(\backslash\)n"}, temp-\/>\mbox{\hyperlink{structNode_aaa65a8deba665a1e223987e29def7d4f}{dob}});}
+\DoxyCodeLine{144     printf(\textcolor{stringliteral}{"Contact No. : \%lld \(\backslash\)n"}, temp -\/> \mbox{\hyperlink{structNode_aeec0e0200cf6f9dfd8bc5940acd30b1e}{phone\_no}} );}
+\DoxyCodeLine{145     printf(\textcolor{stringliteral}{"Address : \%s \(\backslash\)n\(\backslash\)n"}, temp -\/> \mbox{\hyperlink{structNode_ad6d30c883034486415179fc8241f9483}{address}});}
+\DoxyCodeLine{146 }
+\DoxyCodeLine{147     \textcolor{keywordflow}{for} (temp = \mbox{\hyperlink{q1_8c_ae959b310460c42ab25a11f7680421d52}{head}} -\/> \mbox{\hyperlink{structNode_af67b110ca1a258b793bf69d306929b22}{next}} ; temp != \mbox{\hyperlink{q1_8c_ae959b310460c42ab25a11f7680421d52}{head}} ; temp=temp -\/> \mbox{\hyperlink{structNode_af67b110ca1a258b793bf69d306929b22}{next}})\{}
+\DoxyCodeLine{148         printf(\textcolor{stringliteral}{"Name : \%s \(\backslash\)n"}, temp-\/>\mbox{\hyperlink{structNode_a097e71641354dab4e0e6e861ff4bcb4a}{Name}});}
+\DoxyCodeLine{149         printf(\textcolor{stringliteral}{"Enrollment no. : \%d\(\backslash\)n"}, temp-\/>\mbox{\hyperlink{structNode_afe98e143da0a3b956ec2b2c2c0b24bc1}{roll\_no}});}
+\DoxyCodeLine{150         printf(\textcolor{stringliteral}{"Date of Birth : \%s \(\backslash\)n"}, temp-\/>\mbox{\hyperlink{structNode_aaa65a8deba665a1e223987e29def7d4f}{dob}});}
+\DoxyCodeLine{151         printf(\textcolor{stringliteral}{"Contact No. : \%lld \(\backslash\)n"}, temp -\/> \mbox{\hyperlink{structNode_aeec0e0200cf6f9dfd8bc5940acd30b1e}{phone\_no}} );}
+\DoxyCodeLine{152         printf(\textcolor{stringliteral}{"Address : \%s \(\backslash\)n\(\backslash\)n"}, temp -\/> \mbox{\hyperlink{structNode_ad6d30c883034486415179fc8241f9483}{address}});}
+\DoxyCodeLine{153     \}}
+\DoxyCodeLine{154 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{q1_8c_a87c101ae9c148d976cf277e0c7c4bce4}\label{q1_8c_a87c101ae9c148d976cf277e0c7c4bce4}} 
+\index{q1.c@{q1.c}!SearchRollNo@{SearchRollNo}}
+\index{SearchRollNo@{SearchRollNo}!q1.c@{q1.c}}
+\doxysubsubsection{\texorpdfstring{SearchRollNo()}{SearchRollNo()}}
+{\footnotesize\ttfamily struct \mbox{\hyperlink{structNode}{Node}}$\ast$ Search\+Roll\+No (\begin{DoxyParamCaption}\item[{int}]{roll\+\_\+no }\end{DoxyParamCaption})}
+
+
+
+To search a roll number in the doubly linked list. 
+
+
+
+Definition at line 66 of file q1.\+c.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{66                                       \{}
+\DoxyCodeLine{67     \textcolor{keyword}{struct }\mbox{\hyperlink{structNode}{Node}}* temp = \mbox{\hyperlink{q1_8c_ae959b310460c42ab25a11f7680421d52}{head}};}
+\DoxyCodeLine{68     \textcolor{keywordflow}{if} (temp -\/> \mbox{\hyperlink{structNode_afe98e143da0a3b956ec2b2c2c0b24bc1}{roll\_no}} == \mbox{\hyperlink{structNode_afe98e143da0a3b956ec2b2c2c0b24bc1}{roll\_no}}) \textcolor{keywordflow}{return} temp;}
+\DoxyCodeLine{69     \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{70         \textcolor{keywordflow}{for}(temp = \mbox{\hyperlink{q1_8c_ae959b310460c42ab25a11f7680421d52}{head}} -\/> \mbox{\hyperlink{structNode_af67b110ca1a258b793bf69d306929b22}{next}} ; temp != \mbox{\hyperlink{q1_8c_ae959b310460c42ab25a11f7680421d52}{head}} ; temp = temp -\/> \mbox{\hyperlink{structNode_af67b110ca1a258b793bf69d306929b22}{next}})\{}
+\DoxyCodeLine{71             \textcolor{keywordflow}{if} (temp -\/> \mbox{\hyperlink{structNode_afe98e143da0a3b956ec2b2c2c0b24bc1}{roll\_no}} == \mbox{\hyperlink{structNode_afe98e143da0a3b956ec2b2c2c0b24bc1}{roll\_no}}) \textcolor{keywordflow}{return} temp;}
+\DoxyCodeLine{72         \}}
+\DoxyCodeLine{73         \textcolor{keywordflow}{return} NULL;}
+\DoxyCodeLine{74     \}}
+\DoxyCodeLine{75 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{q1_8c_a16af310ad608852c74a4b3c1f5c694c9}\label{q1_8c_a16af310ad608852c74a4b3c1f5c694c9}} 
+\index{q1.c@{q1.c}!sortByName@{sortByName}}
+\index{sortByName@{sortByName}!q1.c@{q1.c}}
+\doxysubsubsection{\texorpdfstring{sortByName()}{sortByName()}}
+{\footnotesize\ttfamily void sort\+By\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+To albhabetically sort the students on the basis of their name. 
+
+
+
+Definition at line 157 of file q1.\+c.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{157                  \{}
+\DoxyCodeLine{158 }
+\DoxyCodeLine{159     \textcolor{keyword}{struct }\mbox{\hyperlink{structNode}{Node}}* temp1;}
+\DoxyCodeLine{160     \textcolor{keyword}{struct }\mbox{\hyperlink{structNode}{Node}}* temp2;}
+\DoxyCodeLine{161 }
+\DoxyCodeLine{162     \textcolor{keywordflow}{if}(\mbox{\hyperlink{q1_8c_ae959b310460c42ab25a11f7680421d52}{head}} == NULL) }
+\DoxyCodeLine{163         printf(\textcolor{stringliteral}{"No element in the list !"});}
+\DoxyCodeLine{164     temp1 = \mbox{\hyperlink{q1_8c_ae959b310460c42ab25a11f7680421d52}{head}};}
+\DoxyCodeLine{165     \textcolor{keywordtype}{int} roll\_no1; \textcolor{keywordtype}{int} roll\_no2;}
+\DoxyCodeLine{166     \textcolor{keywordflow}{for}(temp1 = \mbox{\hyperlink{q1_8c_ae959b310460c42ab25a11f7680421d52}{head}} ; temp1 -\/> \mbox{\hyperlink{structNode_af67b110ca1a258b793bf69d306929b22}{next}} != \mbox{\hyperlink{q1_8c_ae959b310460c42ab25a11f7680421d52}{head}} ; temp1 = temp1 -\/> \mbox{\hyperlink{structNode_af67b110ca1a258b793bf69d306929b22}{next}})}
+\DoxyCodeLine{167     \{}
+\DoxyCodeLine{168         \textcolor{keywordflow}{for}(temp2 = temp1 -\/> \mbox{\hyperlink{structNode_af67b110ca1a258b793bf69d306929b22}{next}} ; temp2 != \mbox{\hyperlink{q1_8c_ae959b310460c42ab25a11f7680421d52}{head}} ; temp2 = temp2 -\/> \mbox{\hyperlink{structNode_af67b110ca1a258b793bf69d306929b22}{next}})}
+\DoxyCodeLine{169         \{}
+\DoxyCodeLine{170             \textcolor{keywordflow}{if}(strcmp(temp1 -\/> \mbox{\hyperlink{structNode_a097e71641354dab4e0e6e861ff4bcb4a}{Name}} , temp2 -\/> \mbox{\hyperlink{structNode_a097e71641354dab4e0e6e861ff4bcb4a}{Name}})>0)}
+\DoxyCodeLine{171             \{}
+\DoxyCodeLine{172                 \mbox{\hyperlink{q1_8c_a53c1d6153092d0653894323dc4061353}{Swap\_Nodes}}(temp1,temp2);}
+\DoxyCodeLine{173             \}}
+\DoxyCodeLine{174         \}}
+\DoxyCodeLine{175     \}}
+\DoxyCodeLine{176     printf(\textcolor{stringliteral}{" Sorted successfully !\(\backslash\)n"});}
+\DoxyCodeLine{177 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{q1_8c_a8a3757e3cfa54c09eb60360b35b2e917}\label{q1_8c_a8a3757e3cfa54c09eb60360b35b2e917}} 
+\index{q1.c@{q1.c}!StoreUnusedRollNo@{StoreUnusedRollNo}}
+\index{StoreUnusedRollNo@{StoreUnusedRollNo}!q1.c@{q1.c}}
+\doxysubsubsection{\texorpdfstring{StoreUnusedRollNo()}{StoreUnusedRollNo()}}
+{\footnotesize\ttfamily void Store\+Unused\+Roll\+No (\begin{DoxyParamCaption}\item[{int}]{roll\+\_\+no }\end{DoxyParamCaption})}
+
+
+
+to store the roll numbers deleted from the list. 
+
+
+
+Definition at line 78 of file q1.\+c.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{78                                    \{}
+\DoxyCodeLine{79     \mbox{\hyperlink{q1_8c_af866be352de659d624986cb76b8d45b6}{rear}}++;}
+\DoxyCodeLine{80     \mbox{\hyperlink{q1_8c_a753bcb11817ec805b773ab74c1601143}{unusedrollno}}[\mbox{\hyperlink{q1_8c_af866be352de659d624986cb76b8d45b6}{rear}}]=\mbox{\hyperlink{structNode_afe98e143da0a3b956ec2b2c2c0b24bc1}{roll\_no}};  }
+\DoxyCodeLine{81 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{q1_8c_a53c1d6153092d0653894323dc4061353}\label{q1_8c_a53c1d6153092d0653894323dc4061353}} 
+\index{q1.c@{q1.c}!Swap\_Nodes@{Swap\_Nodes}}
+\index{Swap\_Nodes@{Swap\_Nodes}!q1.c@{q1.c}}
+\doxysubsubsection{\texorpdfstring{Swap\_Nodes()}{Swap\_Nodes()}}
+{\footnotesize\ttfamily void Swap\+\_\+\+Nodes (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structNode}{Node}} $\ast$}]{node1,  }\item[{struct \mbox{\hyperlink{structNode}{Node}} $\ast$}]{node2 }\end{DoxyParamCaption})}
+
+
+
+To swap the data of two nodes. 
+
+
+
+Definition at line 111 of file q1.\+c.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{111                                                         \{}
+\DoxyCodeLine{112 }
+\DoxyCodeLine{113     \textcolor{keywordtype}{char} \mbox{\hyperlink{structNode_a097e71641354dab4e0e6e861ff4bcb4a}{Name}}[50], \mbox{\hyperlink{structNode_aaa65a8deba665a1e223987e29def7d4f}{dob}}[20], \mbox{\hyperlink{structNode_ad6d30c883034486415179fc8241f9483}{address}}[100];}
+\DoxyCodeLine{114     \textcolor{keywordtype}{int} \mbox{\hyperlink{structNode_afe98e143da0a3b956ec2b2c2c0b24bc1}{roll\_no}}; \textcolor{keywordtype}{long} \textcolor{keywordtype}{long} \textcolor{keywordtype}{int} \mbox{\hyperlink{structNode_aeec0e0200cf6f9dfd8bc5940acd30b1e}{phone\_no}};}
+\DoxyCodeLine{115     strcpy(\mbox{\hyperlink{structNode_a097e71641354dab4e0e6e861ff4bcb4a}{Name}}, node1-\/>\mbox{\hyperlink{structNode_a097e71641354dab4e0e6e861ff4bcb4a}{Name}});}
+\DoxyCodeLine{116     strcpy(\mbox{\hyperlink{structNode_ad6d30c883034486415179fc8241f9483}{address}}, node1-\/>\mbox{\hyperlink{structNode_ad6d30c883034486415179fc8241f9483}{address}});}
+\DoxyCodeLine{117     strcpy(\mbox{\hyperlink{structNode_aaa65a8deba665a1e223987e29def7d4f}{dob}}, node1-\/>\mbox{\hyperlink{structNode_aaa65a8deba665a1e223987e29def7d4f}{dob}});}
+\DoxyCodeLine{118     \mbox{\hyperlink{structNode_aeec0e0200cf6f9dfd8bc5940acd30b1e}{phone\_no}} = node1-\/>\mbox{\hyperlink{structNode_aeec0e0200cf6f9dfd8bc5940acd30b1e}{phone\_no}};}
+\DoxyCodeLine{119     \mbox{\hyperlink{structNode_afe98e143da0a3b956ec2b2c2c0b24bc1}{roll\_no}} = node1-\/>\mbox{\hyperlink{structNode_afe98e143da0a3b956ec2b2c2c0b24bc1}{roll\_no}};}
+\DoxyCodeLine{120 }
+\DoxyCodeLine{121     strcpy(node1-\/>\mbox{\hyperlink{structNode_a097e71641354dab4e0e6e861ff4bcb4a}{Name}}, node2-\/>\mbox{\hyperlink{structNode_a097e71641354dab4e0e6e861ff4bcb4a}{Name}});}
+\DoxyCodeLine{122     strcpy(node1-\/>\mbox{\hyperlink{structNode_ad6d30c883034486415179fc8241f9483}{address}}, node2-\/>\mbox{\hyperlink{structNode_ad6d30c883034486415179fc8241f9483}{address}});}
+\DoxyCodeLine{123     strcpy(node1-\/>\mbox{\hyperlink{structNode_aaa65a8deba665a1e223987e29def7d4f}{dob}}, node2-\/>\mbox{\hyperlink{structNode_aaa65a8deba665a1e223987e29def7d4f}{dob}});}
+\DoxyCodeLine{124     node1-\/>\mbox{\hyperlink{structNode_aeec0e0200cf6f9dfd8bc5940acd30b1e}{phone\_no}} = node2-\/>\mbox{\hyperlink{structNode_aeec0e0200cf6f9dfd8bc5940acd30b1e}{phone\_no}};}
+\DoxyCodeLine{125     node1-\/> \mbox{\hyperlink{structNode_afe98e143da0a3b956ec2b2c2c0b24bc1}{roll\_no}} = node2-\/>\mbox{\hyperlink{structNode_afe98e143da0a3b956ec2b2c2c0b24bc1}{roll\_no}};}
+\DoxyCodeLine{126 }
+\DoxyCodeLine{127     strcpy(node2-\/>\mbox{\hyperlink{structNode_a097e71641354dab4e0e6e861ff4bcb4a}{Name}}, \mbox{\hyperlink{structNode_a097e71641354dab4e0e6e861ff4bcb4a}{Name}});}
+\DoxyCodeLine{128     strcpy(node2-\/>\mbox{\hyperlink{structNode_ad6d30c883034486415179fc8241f9483}{address}}, \mbox{\hyperlink{structNode_ad6d30c883034486415179fc8241f9483}{address}});}
+\DoxyCodeLine{129     strcpy(node2-\/>\mbox{\hyperlink{structNode_aaa65a8deba665a1e223987e29def7d4f}{dob}}, \mbox{\hyperlink{structNode_aaa65a8deba665a1e223987e29def7d4f}{dob}});}
+\DoxyCodeLine{130     node2-\/>\mbox{\hyperlink{structNode_aeec0e0200cf6f9dfd8bc5940acd30b1e}{phone\_no}} = \mbox{\hyperlink{structNode_aeec0e0200cf6f9dfd8bc5940acd30b1e}{phone\_no}};}
+\DoxyCodeLine{131     node2-\/>\mbox{\hyperlink{structNode_afe98e143da0a3b956ec2b2c2c0b24bc1}{roll\_no}} = \mbox{\hyperlink{structNode_afe98e143da0a3b956ec2b2c2c0b24bc1}{roll\_no}}; }
+\DoxyCodeLine{132 }
+\DoxyCodeLine{133 \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{q1_8c_ae959b310460c42ab25a11f7680421d52}\label{q1_8c_ae959b310460c42ab25a11f7680421d52}} 
+\index{q1.c@{q1.c}!head@{head}}
+\index{head@{head}!q1.c@{q1.c}}
+\doxysubsubsection{\texorpdfstring{head}{head}}
+{\footnotesize\ttfamily struct \mbox{\hyperlink{structNode}{Node}}$\ast$ head =N\+U\+LL}
+
+
+
+Definition at line 20 of file q1.\+c.
+
+\mbox{\Hypertarget{q1_8c_af866be352de659d624986cb76b8d45b6}\label{q1_8c_af866be352de659d624986cb76b8d45b6}} 
+\index{q1.c@{q1.c}!rear@{rear}}
+\index{rear@{rear}!q1.c@{q1.c}}
+\doxysubsubsection{\texorpdfstring{rear}{rear}}
+{\footnotesize\ttfamily int rear =-\/1}
+
+
+
+Definition at line 6 of file q1.\+c.
+
+\mbox{\Hypertarget{q1_8c_a753bcb11817ec805b773ab74c1601143}\label{q1_8c_a753bcb11817ec805b773ab74c1601143}} 
+\index{q1.c@{q1.c}!unusedrollno@{unusedrollno}}
+\index{unusedrollno@{unusedrollno}!q1.c@{q1.c}}
+\doxysubsubsection{\texorpdfstring{unusedrollno}{unusedrollno}}
+{\footnotesize\ttfamily int unusedrollno\mbox{[}10\mbox{]}}
+
+
+
+Definition at line 5 of file q1.\+c.
+

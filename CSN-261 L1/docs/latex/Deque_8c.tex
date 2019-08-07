@@ -1,0 +1,296 @@
+\hypertarget{Deque_8c}{}\doxysection{Deque.\+c File Reference}
+\label{Deque_8c}\index{Deque.c@{Deque.c}}
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{Deque_8c_af39bcfe85662cc1aac15b45ef74d1036}{create\+\_\+dequeue}} (int data)
+\begin{DoxyCompactList}\small\item\em Initialising the deque. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{Deque_8c_a310e0c15137039d05348be15f9b4f11a}{insert\+\_\+front}} ()
+\begin{DoxyCompactList}\small\item\em Insert an element in the deque from the front. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{Deque_8c_abc900612a214a64fccd859a2d3fd0139}{insert\+\_\+rear}} ()
+\begin{DoxyCompactList}\small\item\em Insert an element in the deque from the rear. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{Deque_8c_a004bd8e62ebe43ba759b5723e71fcfa2}{delete\+\_\+front}} ()
+\begin{DoxyCompactList}\small\item\em Delete the front element of the deque. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{Deque_8c_ac3d3329f1aab2fb8434bcd16ab8d346a}{delete\+\_\+rear}} ()
+\begin{DoxyCompactList}\small\item\em Delete the rear element of the deque. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{Deque_8c_a388f572c62279f839ee138a9afbdeeb5}{print}} ()
+\begin{DoxyCompactList}\small\item\em Print the size and contents of the deque. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{Deque_8c_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{Deque_8c_ac261b45b6346e633de22d510c9f6a770}{front}} =-\/1
+\item 
+int \mbox{\hyperlink{Deque_8c_af866be352de659d624986cb76b8d45b6}{rear}} =-\/1
+\item 
+int \mbox{\hyperlink{Deque_8c_a439227feff9d7f55384e8780cfc2eb82}{size}} =0
+\item 
+int $\ast$ \mbox{\hyperlink{Deque_8c_a881689dfe0f599289e1631776bc3f998}{dequeue}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{Deque_8c_af39bcfe85662cc1aac15b45ef74d1036}\label{Deque_8c_af39bcfe85662cc1aac15b45ef74d1036}} 
+\index{Deque.c@{Deque.c}!create\_dequeue@{create\_dequeue}}
+\index{create\_dequeue@{create\_dequeue}!Deque.c@{Deque.c}}
+\doxysubsubsection{\texorpdfstring{create\_dequeue()}{create\_dequeue()}}
+{\footnotesize\ttfamily void create\+\_\+dequeue (\begin{DoxyParamCaption}\item[{int}]{data }\end{DoxyParamCaption})}
+
+
+
+Initialising the deque. 
+
+
+
+Definition at line 10 of file Deque.\+c.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{10                              \{}
+\DoxyCodeLine{11     \mbox{\hyperlink{Deque_8c_a439227feff9d7f55384e8780cfc2eb82}{size}}=1;}
+\DoxyCodeLine{12     \mbox{\hyperlink{Deque_8c_a881689dfe0f599289e1631776bc3f998}{dequeue}}=(\textcolor{keywordtype}{int}*)malloc(\textcolor{keyword}{sizeof}(\mbox{\hyperlink{Deque_8c_a439227feff9d7f55384e8780cfc2eb82}{size}}*\textcolor{keyword}{sizeof}(\textcolor{keywordtype}{int})));}
+\DoxyCodeLine{13     \mbox{\hyperlink{Deque_8c_ac261b45b6346e633de22d510c9f6a770}{front}}=0;}
+\DoxyCodeLine{14     \mbox{\hyperlink{Deque_8c_af866be352de659d624986cb76b8d45b6}{rear}}=0;}
+\DoxyCodeLine{15     \mbox{\hyperlink{Deque_8c_a881689dfe0f599289e1631776bc3f998}{dequeue}}[0]=data;}
+\DoxyCodeLine{16 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{Deque_8c_a004bd8e62ebe43ba759b5723e71fcfa2}\label{Deque_8c_a004bd8e62ebe43ba759b5723e71fcfa2}} 
+\index{Deque.c@{Deque.c}!delete\_front@{delete\_front}}
+\index{delete\_front@{delete\_front}!Deque.c@{Deque.c}}
+\doxysubsubsection{\texorpdfstring{delete\_front()}{delete\_front()}}
+{\footnotesize\ttfamily void delete\+\_\+front (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Delete the front element of the deque. 
+
+
+
+Definition at line 56 of file Deque.\+c.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{56                    \{}
+\DoxyCodeLine{57     \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i=0;i<\mbox{\hyperlink{Deque_8c_af866be352de659d624986cb76b8d45b6}{rear}};i++)\{}
+\DoxyCodeLine{58         \mbox{\hyperlink{Deque_8c_a881689dfe0f599289e1631776bc3f998}{dequeue}}[i]=\mbox{\hyperlink{Deque_8c_a881689dfe0f599289e1631776bc3f998}{dequeue}}[i+1];}
+\DoxyCodeLine{59     \}}
+\DoxyCodeLine{60     \mbox{\hyperlink{Deque_8c_af866be352de659d624986cb76b8d45b6}{rear}}-\/-\/;}
+\DoxyCodeLine{61     \textcolor{keywordflow}{if}(\mbox{\hyperlink{Deque_8c_af866be352de659d624986cb76b8d45b6}{rear}}+1==\mbox{\hyperlink{Deque_8c_a439227feff9d7f55384e8780cfc2eb82}{size}}/2)\{}
+\DoxyCodeLine{62         \mbox{\hyperlink{Deque_8c_a439227feff9d7f55384e8780cfc2eb82}{size}}=\mbox{\hyperlink{Deque_8c_a439227feff9d7f55384e8780cfc2eb82}{size}}/2;}
+\DoxyCodeLine{63         \mbox{\hyperlink{Deque_8c_a881689dfe0f599289e1631776bc3f998}{dequeue}}=(\textcolor{keywordtype}{int}*)realloc(\mbox{\hyperlink{Deque_8c_a881689dfe0f599289e1631776bc3f998}{dequeue}}, \textcolor{keyword}{sizeof}(\mbox{\hyperlink{Deque_8c_a439227feff9d7f55384e8780cfc2eb82}{size}}*\textcolor{keyword}{sizeof}(\textcolor{keywordtype}{int})));}
+\DoxyCodeLine{64     \}}
+\DoxyCodeLine{65 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{Deque_8c_ac3d3329f1aab2fb8434bcd16ab8d346a}\label{Deque_8c_ac3d3329f1aab2fb8434bcd16ab8d346a}} 
+\index{Deque.c@{Deque.c}!delete\_rear@{delete\_rear}}
+\index{delete\_rear@{delete\_rear}!Deque.c@{Deque.c}}
+\doxysubsubsection{\texorpdfstring{delete\_rear()}{delete\_rear()}}
+{\footnotesize\ttfamily void delete\+\_\+rear (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Delete the rear element of the deque. 
+
+
+
+Definition at line 68 of file Deque.\+c.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{68                   \{}
+\DoxyCodeLine{69     \mbox{\hyperlink{Deque_8c_a881689dfe0f599289e1631776bc3f998}{dequeue}}[\mbox{\hyperlink{Deque_8c_af866be352de659d624986cb76b8d45b6}{rear}}]=0;}
+\DoxyCodeLine{70     \mbox{\hyperlink{Deque_8c_af866be352de659d624986cb76b8d45b6}{rear}}-\/-\/;}
+\DoxyCodeLine{71     \textcolor{keywordflow}{if}(\mbox{\hyperlink{Deque_8c_af866be352de659d624986cb76b8d45b6}{rear}}+1==\mbox{\hyperlink{Deque_8c_a439227feff9d7f55384e8780cfc2eb82}{size}}/2)\{}
+\DoxyCodeLine{72         \mbox{\hyperlink{Deque_8c_a439227feff9d7f55384e8780cfc2eb82}{size}}=\mbox{\hyperlink{Deque_8c_a439227feff9d7f55384e8780cfc2eb82}{size}}/2;}
+\DoxyCodeLine{73         \mbox{\hyperlink{Deque_8c_a881689dfe0f599289e1631776bc3f998}{dequeue}}=(\textcolor{keywordtype}{int}*)realloc(\mbox{\hyperlink{Deque_8c_a881689dfe0f599289e1631776bc3f998}{dequeue}}, \textcolor{keyword}{sizeof}(\mbox{\hyperlink{Deque_8c_a439227feff9d7f55384e8780cfc2eb82}{size}}*\textcolor{keyword}{sizeof}(\textcolor{keywordtype}{int})));}
+\DoxyCodeLine{74     \}}
+\DoxyCodeLine{75 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{Deque_8c_a310e0c15137039d05348be15f9b4f11a}\label{Deque_8c_a310e0c15137039d05348be15f9b4f11a}} 
+\index{Deque.c@{Deque.c}!insert\_front@{insert\_front}}
+\index{insert\_front@{insert\_front}!Deque.c@{Deque.c}}
+\doxysubsubsection{\texorpdfstring{insert\_front()}{insert\_front()}}
+{\footnotesize\ttfamily void insert\+\_\+front (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Insert an element in the deque from the front. 
+
+
+
+Definition at line 18 of file Deque.\+c.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{18                    \{}
+\DoxyCodeLine{19     \textcolor{keywordtype}{int} data;}
+\DoxyCodeLine{20     printf(\textcolor{stringliteral}{"\%s\(\backslash\)n"},\textcolor{stringliteral}{"Insert the number to be added"} );}
+\DoxyCodeLine{21     scanf(\textcolor{stringliteral}{"\%d"}, \&data);}
+\DoxyCodeLine{22     \textcolor{keywordflow}{if} (\mbox{\hyperlink{Deque_8c_a439227feff9d7f55384e8780cfc2eb82}{size}}==0) \{}
+\DoxyCodeLine{23         \mbox{\hyperlink{Deque_8c_af39bcfe85662cc1aac15b45ef74d1036}{create\_dequeue}}(data);}
+\DoxyCodeLine{24         \textcolor{keywordflow}{return};}
+\DoxyCodeLine{25     \}}
+\DoxyCodeLine{26     \textcolor{keywordflow}{if} (\mbox{\hyperlink{Deque_8c_af866be352de659d624986cb76b8d45b6}{rear}}==\mbox{\hyperlink{Deque_8c_a439227feff9d7f55384e8780cfc2eb82}{size}}-\/1)\{}
+\DoxyCodeLine{27         \mbox{\hyperlink{Deque_8c_a439227feff9d7f55384e8780cfc2eb82}{size}}*=2;}
+\DoxyCodeLine{28         \mbox{\hyperlink{Deque_8c_a881689dfe0f599289e1631776bc3f998}{dequeue}}=(\textcolor{keywordtype}{int}*)realloc(\mbox{\hyperlink{Deque_8c_a881689dfe0f599289e1631776bc3f998}{dequeue}}, \textcolor{keyword}{sizeof}(\mbox{\hyperlink{Deque_8c_a439227feff9d7f55384e8780cfc2eb82}{size}}*\textcolor{keyword}{sizeof}(\textcolor{keywordtype}{int})));}
+\DoxyCodeLine{29     \}}
+\DoxyCodeLine{30         \textcolor{keywordtype}{int} i=\mbox{\hyperlink{Deque_8c_af866be352de659d624986cb76b8d45b6}{rear}};}
+\DoxyCodeLine{31         \textcolor{keywordflow}{while}(i>=0)\{}
+\DoxyCodeLine{32             \mbox{\hyperlink{Deque_8c_a881689dfe0f599289e1631776bc3f998}{dequeue}}[i+1]=\mbox{\hyperlink{Deque_8c_a881689dfe0f599289e1631776bc3f998}{dequeue}}[i];}
+\DoxyCodeLine{33             i-\/-\/;}
+\DoxyCodeLine{34         \}}
+\DoxyCodeLine{35         \mbox{\hyperlink{Deque_8c_a881689dfe0f599289e1631776bc3f998}{dequeue}}[\mbox{\hyperlink{Deque_8c_ac261b45b6346e633de22d510c9f6a770}{front}}]=data;}
+\DoxyCodeLine{36         \mbox{\hyperlink{Deque_8c_af866be352de659d624986cb76b8d45b6}{rear}}++;}
+\DoxyCodeLine{37 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{Deque_8c_abc900612a214a64fccd859a2d3fd0139}\label{Deque_8c_abc900612a214a64fccd859a2d3fd0139}} 
+\index{Deque.c@{Deque.c}!insert\_rear@{insert\_rear}}
+\index{insert\_rear@{insert\_rear}!Deque.c@{Deque.c}}
+\doxysubsubsection{\texorpdfstring{insert\_rear()}{insert\_rear()}}
+{\footnotesize\ttfamily void insert\+\_\+rear (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Insert an element in the deque from the rear. 
+
+
+
+Definition at line 40 of file Deque.\+c.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{40                   \{}
+\DoxyCodeLine{41     \textcolor{keywordtype}{int} data;}
+\DoxyCodeLine{42     printf(\textcolor{stringliteral}{"\%s\(\backslash\)n"},\textcolor{stringliteral}{"Insert the number to be added"} );}
+\DoxyCodeLine{43     scanf(\textcolor{stringliteral}{"\%d"}, \&data);}
+\DoxyCodeLine{44     \textcolor{keywordflow}{if} (\mbox{\hyperlink{Deque_8c_a439227feff9d7f55384e8780cfc2eb82}{size}}==0) \{}
+\DoxyCodeLine{45         \mbox{\hyperlink{Deque_8c_af39bcfe85662cc1aac15b45ef74d1036}{create\_dequeue}}(data);}
+\DoxyCodeLine{46     \}}
+\DoxyCodeLine{47     \textcolor{keywordflow}{if} (\mbox{\hyperlink{Deque_8c_af866be352de659d624986cb76b8d45b6}{rear}}==\mbox{\hyperlink{Deque_8c_a439227feff9d7f55384e8780cfc2eb82}{size}}-\/1)\{}
+\DoxyCodeLine{48         \mbox{\hyperlink{Deque_8c_a439227feff9d7f55384e8780cfc2eb82}{size}}*=2;}
+\DoxyCodeLine{49         \mbox{\hyperlink{Deque_8c_a881689dfe0f599289e1631776bc3f998}{dequeue}}=(\textcolor{keywordtype}{int}*)realloc(\mbox{\hyperlink{Deque_8c_a881689dfe0f599289e1631776bc3f998}{dequeue}}, \textcolor{keyword}{sizeof}(\mbox{\hyperlink{Deque_8c_a439227feff9d7f55384e8780cfc2eb82}{size}}*\textcolor{keyword}{sizeof}(\textcolor{keywordtype}{int})));}
+\DoxyCodeLine{50     \}}
+\DoxyCodeLine{51     \mbox{\hyperlink{Deque_8c_af866be352de659d624986cb76b8d45b6}{rear}}++;}
+\DoxyCodeLine{52     \mbox{\hyperlink{Deque_8c_a881689dfe0f599289e1631776bc3f998}{dequeue}}[\mbox{\hyperlink{Deque_8c_af866be352de659d624986cb76b8d45b6}{rear}}]=data;}
+\DoxyCodeLine{53 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{Deque_8c_ae66f6b31b5ad750f1fe042a706a4e3d4}\label{Deque_8c_ae66f6b31b5ad750f1fe042a706a4e3d4}} 
+\index{Deque.c@{Deque.c}!main@{main}}
+\index{main@{main}!Deque.c@{Deque.c}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 87 of file Deque.\+c.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{87           \{}
+\DoxyCodeLine{88     \textcolor{keywordtype}{int} instruction;}
+\DoxyCodeLine{89     \textcolor{keywordflow}{do} \{}
+\DoxyCodeLine{90         printf(\textcolor{stringliteral}{"\%s\(\backslash\)n"}, \textcolor{stringliteral}{"1-\/Insert in Front"} );}
+\DoxyCodeLine{91     printf(\textcolor{stringliteral}{"\%s\(\backslash\)n"}, \textcolor{stringliteral}{"2-\/Insert in Rear"} );}
+\DoxyCodeLine{92     printf(\textcolor{stringliteral}{"\%s\(\backslash\)n"}, \textcolor{stringliteral}{"3-\/Delete from front"} );}
+\DoxyCodeLine{93     printf(\textcolor{stringliteral}{"\%s\(\backslash\)n"}, \textcolor{stringliteral}{"4-\/Delete from Rear"});}
+\DoxyCodeLine{94     printf(\textcolor{stringliteral}{"\%s\(\backslash\)n"}, \textcolor{stringliteral}{"5-\/Print the dequeue"});}
+\DoxyCodeLine{95     printf(\textcolor{stringliteral}{"\%s\(\backslash\)n"}, \textcolor{stringliteral}{"6-\/End the Program"});}
+\DoxyCodeLine{96     scanf(\textcolor{stringliteral}{"\%d"}, \&instruction);}
+\DoxyCodeLine{97     \textcolor{keywordflow}{switch}(instruction)\{}
+\DoxyCodeLine{98         \textcolor{keywordflow}{case} 1: \mbox{\hyperlink{Deque_8c_a310e0c15137039d05348be15f9b4f11a}{insert\_front}}();}
+\DoxyCodeLine{99         \textcolor{keywordflow}{break};}
+\DoxyCodeLine{100         \textcolor{keywordflow}{case} 2: \mbox{\hyperlink{Deque_8c_abc900612a214a64fccd859a2d3fd0139}{insert\_rear}}();}
+\DoxyCodeLine{101         \textcolor{keywordflow}{break};}
+\DoxyCodeLine{102         \textcolor{keywordflow}{case} 3: \mbox{\hyperlink{Deque_8c_a004bd8e62ebe43ba759b5723e71fcfa2}{delete\_front}}();}
+\DoxyCodeLine{103         \textcolor{keywordflow}{break};}
+\DoxyCodeLine{104         \textcolor{keywordflow}{case} 4: \mbox{\hyperlink{Deque_8c_ac3d3329f1aab2fb8434bcd16ab8d346a}{delete\_rear}}();}
+\DoxyCodeLine{105         \textcolor{keywordflow}{break};}
+\DoxyCodeLine{106         \textcolor{keywordflow}{case} 5: \mbox{\hyperlink{Deque_8c_a388f572c62279f839ee138a9afbdeeb5}{print}}();}
+\DoxyCodeLine{107         \textcolor{keywordflow}{break};}
+\DoxyCodeLine{108 }
+\DoxyCodeLine{109         \textcolor{keywordflow}{case} 6: \textcolor{keywordflow}{break};}
+\DoxyCodeLine{110         default : printf(\textcolor{stringliteral}{"\%s\(\backslash\)n"}, \textcolor{stringliteral}{"Please enter a valid input."});}
+\DoxyCodeLine{111     \}}
+\DoxyCodeLine{112 \}}
+\DoxyCodeLine{113     \textcolor{keywordflow}{while}(instruction!=6);}
+\DoxyCodeLine{114     \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{115 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{Deque_8c_a388f572c62279f839ee138a9afbdeeb5}\label{Deque_8c_a388f572c62279f839ee138a9afbdeeb5}} 
+\index{Deque.c@{Deque.c}!print@{print}}
+\index{print@{print}!Deque.c@{Deque.c}}
+\doxysubsubsection{\texorpdfstring{print()}{print()}}
+{\footnotesize\ttfamily void print (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Print the size and contents of the deque. 
+
+
+
+Definition at line 78 of file Deque.\+c.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{78             \{}
+\DoxyCodeLine{79     \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i=0;i<=\mbox{\hyperlink{Deque_8c_af866be352de659d624986cb76b8d45b6}{rear}};i++)\{}
+\DoxyCodeLine{80         printf(\textcolor{stringliteral}{"\%d "}, \mbox{\hyperlink{Deque_8c_a881689dfe0f599289e1631776bc3f998}{dequeue}}[i]);}
+\DoxyCodeLine{81     \}}
+\DoxyCodeLine{82     printf(\textcolor{stringliteral}{"The size of the deque is \%d bytes."}, \mbox{\hyperlink{Deque_8c_a439227feff9d7f55384e8780cfc2eb82}{size}}*4 );}
+\DoxyCodeLine{83     putchar(\textcolor{charliteral}{'\(\backslash\)n'});}
+\DoxyCodeLine{84 }
+\DoxyCodeLine{85 \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{Deque_8c_a881689dfe0f599289e1631776bc3f998}\label{Deque_8c_a881689dfe0f599289e1631776bc3f998}} 
+\index{Deque.c@{Deque.c}!dequeue@{dequeue}}
+\index{dequeue@{dequeue}!Deque.c@{Deque.c}}
+\doxysubsubsection{\texorpdfstring{dequeue}{dequeue}}
+{\footnotesize\ttfamily int$\ast$ dequeue}
+
+
+
+Definition at line 7 of file Deque.\+c.
+
+\mbox{\Hypertarget{Deque_8c_ac261b45b6346e633de22d510c9f6a770}\label{Deque_8c_ac261b45b6346e633de22d510c9f6a770}} 
+\index{Deque.c@{Deque.c}!front@{front}}
+\index{front@{front}!Deque.c@{Deque.c}}
+\doxysubsubsection{\texorpdfstring{front}{front}}
+{\footnotesize\ttfamily int front =-\/1}
+
+
+
+Definition at line 4 of file Deque.\+c.
+
+\mbox{\Hypertarget{Deque_8c_af866be352de659d624986cb76b8d45b6}\label{Deque_8c_af866be352de659d624986cb76b8d45b6}} 
+\index{Deque.c@{Deque.c}!rear@{rear}}
+\index{rear@{rear}!Deque.c@{Deque.c}}
+\doxysubsubsection{\texorpdfstring{rear}{rear}}
+{\footnotesize\ttfamily int rear =-\/1}
+
+
+
+Definition at line 5 of file Deque.\+c.
+
+\mbox{\Hypertarget{Deque_8c_a439227feff9d7f55384e8780cfc2eb82}\label{Deque_8c_a439227feff9d7f55384e8780cfc2eb82}} 
+\index{Deque.c@{Deque.c}!size@{size}}
+\index{size@{size}!Deque.c@{Deque.c}}
+\doxysubsubsection{\texorpdfstring{size}{size}}
+{\footnotesize\ttfamily int size =0}
+
+
+
+Definition at line 6 of file Deque.\+c.
+

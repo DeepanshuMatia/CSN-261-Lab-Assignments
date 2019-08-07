@@ -1,0 +1,376 @@
+\hypertarget{q3_8c}{}\doxysection{q3.\+c File Reference}
+\label{q3_8c}\index{q3.c@{q3.c}}
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int $\ast$$\ast$ \mbox{\hyperlink{q3_8c_adf77aa0c2a175e5d8296bf4cc6c6cc85}{read\+\_\+color\+\_\+data}} (char $\ast$file\+\_\+name)
+\begin{DoxyCompactList}\small\item\em Read pixel data from the file and store it in a 2 D array. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{q3_8c_acabaa26c4fa5946908bdab53a510a3d9}{write\+\_\+pixel\+\_\+data}} (char $\ast$file, int $\ast$$\ast$color\+\_\+info)
+\begin{DoxyCompactList}\small\item\em Create an output file by reading pixel data from the 2D array. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{q3_8c_a500c91ef1c3f150fa910b40d395fe78d}{remove\+\_\+red}} ()
+\begin{DoxyCompactList}\small\item\em Remove all Red shades. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{q3_8c_a867b8487a8187730acf54f1586d92357}{remove\+\_\+green}} ()
+\begin{DoxyCompactList}\small\item\em Remove all Green shades. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{q3_8c_a64911f75dafad0eea57193e0e86a4846}{remove\+\_\+blue}} ()
+\begin{DoxyCompactList}\small\item\em Remove all Blue shades. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{q3_8c_acadb123ac381afe223a51c6fac2274e9}{red\+\_\+only}} ()
+\begin{DoxyCompactList}\small\item\em Preserve any red shades in the image, but remove all green and blue. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{q3_8c_a5fc2432d3c2934944a0104828e4c3a29}{green\+\_\+only}} ()
+\begin{DoxyCompactList}\small\item\em Preserve any green shades in the image, but remove all red and blue. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{q3_8c_a7b5470c35a4a91bd47431f0713795e23}{blue\+\_\+only}} ()
+\begin{DoxyCompactList}\small\item\em Preserve any blue shades in the image, but remove all red and green. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{q3_8c_aff3098c1cb16051a97525648afd43f19}{get\+\_\+pixel}} ()
+\item 
+int \mbox{\hyperlink{q3_8c_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+int $\ast$$\ast$ \mbox{\hyperlink{q3_8c_a6a4a463a45c6efd427de619db0cd4bfb}{Red}}
+\item 
+int $\ast$$\ast$ \mbox{\hyperlink{q3_8c_a7a7a73693454051ea5529d512eaed4c0}{Green}}
+\item 
+int $\ast$$\ast$ \mbox{\hyperlink{q3_8c_a8a6eaabf58f7ee76203f4265bf704d9d}{Blue}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{q3_8c_a7b5470c35a4a91bd47431f0713795e23}\label{q3_8c_a7b5470c35a4a91bd47431f0713795e23}} 
+\index{q3.c@{q3.c}!blue\_only@{blue\_only}}
+\index{blue\_only@{blue\_only}!q3.c@{q3.c}}
+\doxysubsubsection{\texorpdfstring{blue\_only()}{blue\_only()}}
+{\footnotesize\ttfamily void blue\+\_\+only (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Preserve any blue shades in the image, but remove all red and green. 
+
+
+
+Definition at line 86 of file q3.\+c.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{86                 \{}
+\DoxyCodeLine{87     \mbox{\hyperlink{q3_8c_a500c91ef1c3f150fa910b40d395fe78d}{remove\_red}}();}
+\DoxyCodeLine{88     \mbox{\hyperlink{q3_8c_a867b8487a8187730acf54f1586d92357}{remove\_green}}();}
+\DoxyCodeLine{89     \mbox{\hyperlink{q3_8c_a500c91ef1c3f150fa910b40d395fe78d}{remove\_red}}();}
+\DoxyCodeLine{90 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{q3_8c_aff3098c1cb16051a97525648afd43f19}\label{q3_8c_aff3098c1cb16051a97525648afd43f19}} 
+\index{q3.c@{q3.c}!get\_pixel@{get\_pixel}}
+\index{get\_pixel@{get\_pixel}!q3.c@{q3.c}}
+\doxysubsubsection{\texorpdfstring{get\_pixel()}{get\_pixel()}}
+{\footnotesize\ttfamily void get\+\_\+pixel (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+displays the current pixel (R\+ED, G\+R\+E\+EN and B\+L\+UE) values of the input image at the point with coordinates (x, y), where x and y are the row and column numbers in that image file, respectively. 
+
+Definition at line 94 of file q3.\+c.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{94                 \{}
+\DoxyCodeLine{95     \textcolor{keywordtype}{int} x,y;}
+\DoxyCodeLine{96     printf(\textcolor{stringliteral}{"\%s\(\backslash\)n"}, \textcolor{stringliteral}{"Enter the coordinates of the pixel."} );}
+\DoxyCodeLine{97     scanf(\textcolor{stringliteral}{"\%d"}, \&x);}
+\DoxyCodeLine{98     scanf(\textcolor{stringliteral}{"\%d"}, \&y);}
+\DoxyCodeLine{99     printf(\textcolor{stringliteral}{"Red=\%d\(\backslash\)n"}, \mbox{\hyperlink{q3_8c_a6a4a463a45c6efd427de619db0cd4bfb}{Red}}[x-\/1][y-\/1] );}
+\DoxyCodeLine{100     printf(\textcolor{stringliteral}{"Green=\%d\(\backslash\)n"}, \mbox{\hyperlink{q3_8c_a7a7a73693454051ea5529d512eaed4c0}{Green}}[x-\/1][y-\/1]);}
+\DoxyCodeLine{101     printf(\textcolor{stringliteral}{"Blue=\%d\(\backslash\)n"}, \mbox{\hyperlink{q3_8c_a8a6eaabf58f7ee76203f4265bf704d9d}{Blue}}[x-\/1][y-\/1]);}
+\DoxyCodeLine{102 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{q3_8c_a5fc2432d3c2934944a0104828e4c3a29}\label{q3_8c_a5fc2432d3c2934944a0104828e4c3a29}} 
+\index{q3.c@{q3.c}!green\_only@{green\_only}}
+\index{green\_only@{green\_only}!q3.c@{q3.c}}
+\doxysubsubsection{\texorpdfstring{green\_only()}{green\_only()}}
+{\footnotesize\ttfamily void green\+\_\+only (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Preserve any green shades in the image, but remove all red and blue. 
+
+
+
+Definition at line 79 of file q3.\+c.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{79                  \{}
+\DoxyCodeLine{80     \mbox{\hyperlink{q3_8c_a64911f75dafad0eea57193e0e86a4846}{remove\_blue}}();}
+\DoxyCodeLine{81     \mbox{\hyperlink{q3_8c_a500c91ef1c3f150fa910b40d395fe78d}{remove\_red}}();}
+\DoxyCodeLine{82     \mbox{\hyperlink{q3_8c_a64911f75dafad0eea57193e0e86a4846}{remove\_blue}}();}
+\DoxyCodeLine{83 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{q3_8c_ae66f6b31b5ad750f1fe042a706a4e3d4}\label{q3_8c_ae66f6b31b5ad750f1fe042a706a4e3d4}} 
+\index{q3.c@{q3.c}!main@{main}}
+\index{main@{main}!q3.c@{q3.c}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 104 of file q3.\+c.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{104           \{}
+\DoxyCodeLine{105     \mbox{\hyperlink{q3_8c_a6a4a463a45c6efd427de619db0cd4bfb}{Red}}=\mbox{\hyperlink{q3_8c_adf77aa0c2a175e5d8296bf4cc6c6cc85}{read\_color\_data}}(\textcolor{stringliteral}{"Q3\_ip\_Red.dat"});}
+\DoxyCodeLine{106     \mbox{\hyperlink{q3_8c_a7a7a73693454051ea5529d512eaed4c0}{Green}}=\mbox{\hyperlink{q3_8c_adf77aa0c2a175e5d8296bf4cc6c6cc85}{read\_color\_data}}(\textcolor{stringliteral}{"Q3\_ip\_Green.dat"});}
+\DoxyCodeLine{107     \mbox{\hyperlink{q3_8c_a8a6eaabf58f7ee76203f4265bf704d9d}{Blue}}=\mbox{\hyperlink{q3_8c_adf77aa0c2a175e5d8296bf4cc6c6cc85}{read\_color\_data}}(\textcolor{stringliteral}{"Q3\_ip\_Blue.dat"});}
+\DoxyCodeLine{108     \textcolor{keywordtype}{int} instruction;}
+\DoxyCodeLine{109     \textcolor{keywordflow}{do}\{}
+\DoxyCodeLine{110     printf(\textcolor{stringliteral}{"\%s\(\backslash\)n"},\textcolor{stringliteral}{"1. Remove all red shades."} );}
+\DoxyCodeLine{111     printf(\textcolor{stringliteral}{"\%s\(\backslash\)n"},\textcolor{stringliteral}{"2. Remov all green shades."} );}
+\DoxyCodeLine{112     printf(\textcolor{stringliteral}{"\%s\(\backslash\)n"},\textcolor{stringliteral}{"3. Remove all blue shades."} );}
+\DoxyCodeLine{113     printf(\textcolor{stringliteral}{"\%s\(\backslash\)n"},\textcolor{stringliteral}{"4. Red only."} );}
+\DoxyCodeLine{114     printf(\textcolor{stringliteral}{"\%s\(\backslash\)n"},\textcolor{stringliteral}{"5. Green only."} );}
+\DoxyCodeLine{115     printf(\textcolor{stringliteral}{"\%s\(\backslash\)n"},\textcolor{stringliteral}{"6. Blue only."} );}
+\DoxyCodeLine{116     printf(\textcolor{stringliteral}{"\%s\(\backslash\)n"},\textcolor{stringliteral}{"7. Get color values for a pixel."} );}
+\DoxyCodeLine{117     printf(\textcolor{stringliteral}{"\%s\(\backslash\)n"},\textcolor{stringliteral}{"8. End the program."} );}
+\DoxyCodeLine{118     scanf(\textcolor{stringliteral}{"\%d"}, \&instruction);}
+\DoxyCodeLine{119 }
+\DoxyCodeLine{120     \textcolor{keywordflow}{switch}(instruction)\{}
+\DoxyCodeLine{121         \textcolor{keywordflow}{case} 1: \mbox{\hyperlink{q3_8c_a500c91ef1c3f150fa910b40d395fe78d}{remove\_red}}();}
+\DoxyCodeLine{122         \mbox{\hyperlink{q3_8c_acabaa26c4fa5946908bdab53a510a3d9}{write\_pixel\_data}}(\textcolor{stringliteral}{"Q3\_op\_red.dat"}, \mbox{\hyperlink{q3_8c_a6a4a463a45c6efd427de619db0cd4bfb}{Red}});}
+\DoxyCodeLine{123         \mbox{\hyperlink{q3_8c_acabaa26c4fa5946908bdab53a510a3d9}{write\_pixel\_data}}(\textcolor{stringliteral}{"Q3\_op\_green.dat"}, \mbox{\hyperlink{q3_8c_a7a7a73693454051ea5529d512eaed4c0}{Green}});}
+\DoxyCodeLine{124         \mbox{\hyperlink{q3_8c_acabaa26c4fa5946908bdab53a510a3d9}{write\_pixel\_data}}(\textcolor{stringliteral}{"Q3\_op\_blue.dat"}, \mbox{\hyperlink{q3_8c_a8a6eaabf58f7ee76203f4265bf704d9d}{Blue}});}
+\DoxyCodeLine{125         \textcolor{keywordflow}{break};}
+\DoxyCodeLine{126         \textcolor{keywordflow}{case} 2: \mbox{\hyperlink{q3_8c_a867b8487a8187730acf54f1586d92357}{remove\_green}}();}
+\DoxyCodeLine{127         \mbox{\hyperlink{q3_8c_acabaa26c4fa5946908bdab53a510a3d9}{write\_pixel\_data}}(\textcolor{stringliteral}{"Q3\_op\_red.dat"}, \mbox{\hyperlink{q3_8c_a6a4a463a45c6efd427de619db0cd4bfb}{Red}});}
+\DoxyCodeLine{128         \mbox{\hyperlink{q3_8c_acabaa26c4fa5946908bdab53a510a3d9}{write\_pixel\_data}}(\textcolor{stringliteral}{"Q3\_op\_green.dat"}, \mbox{\hyperlink{q3_8c_a7a7a73693454051ea5529d512eaed4c0}{Green}});}
+\DoxyCodeLine{129         \mbox{\hyperlink{q3_8c_acabaa26c4fa5946908bdab53a510a3d9}{write\_pixel\_data}}(\textcolor{stringliteral}{"Q3\_op\_blue.dat"}, \mbox{\hyperlink{q3_8c_a8a6eaabf58f7ee76203f4265bf704d9d}{Blue}});}
+\DoxyCodeLine{130         \textcolor{keywordflow}{break};}
+\DoxyCodeLine{131         \textcolor{keywordflow}{case} 3: \mbox{\hyperlink{q3_8c_a64911f75dafad0eea57193e0e86a4846}{remove\_blue}}();}
+\DoxyCodeLine{132         \mbox{\hyperlink{q3_8c_acabaa26c4fa5946908bdab53a510a3d9}{write\_pixel\_data}}(\textcolor{stringliteral}{"Q3\_op\_red.dat"}, \mbox{\hyperlink{q3_8c_a6a4a463a45c6efd427de619db0cd4bfb}{Red}});}
+\DoxyCodeLine{133         \mbox{\hyperlink{q3_8c_acabaa26c4fa5946908bdab53a510a3d9}{write\_pixel\_data}}(\textcolor{stringliteral}{"Q3\_op\_green.dat"}, \mbox{\hyperlink{q3_8c_a7a7a73693454051ea5529d512eaed4c0}{Green}});}
+\DoxyCodeLine{134         \mbox{\hyperlink{q3_8c_acabaa26c4fa5946908bdab53a510a3d9}{write\_pixel\_data}}(\textcolor{stringliteral}{"Q3\_op\_blue.dat"}, \mbox{\hyperlink{q3_8c_a8a6eaabf58f7ee76203f4265bf704d9d}{Blue}});}
+\DoxyCodeLine{135         \textcolor{keywordflow}{break};}
+\DoxyCodeLine{136         \textcolor{keywordflow}{case} 4: \mbox{\hyperlink{q3_8c_acadb123ac381afe223a51c6fac2274e9}{red\_only}}();}
+\DoxyCodeLine{137         \mbox{\hyperlink{q3_8c_acabaa26c4fa5946908bdab53a510a3d9}{write\_pixel\_data}}(\textcolor{stringliteral}{"Q3\_op\_red.dat"}, \mbox{\hyperlink{q3_8c_a6a4a463a45c6efd427de619db0cd4bfb}{Red}});}
+\DoxyCodeLine{138         \mbox{\hyperlink{q3_8c_acabaa26c4fa5946908bdab53a510a3d9}{write\_pixel\_data}}(\textcolor{stringliteral}{"Q3\_op\_green.dat"}, \mbox{\hyperlink{q3_8c_a7a7a73693454051ea5529d512eaed4c0}{Green}});}
+\DoxyCodeLine{139         \mbox{\hyperlink{q3_8c_acabaa26c4fa5946908bdab53a510a3d9}{write\_pixel\_data}}(\textcolor{stringliteral}{"Q3\_op\_blue.dat"}, \mbox{\hyperlink{q3_8c_a8a6eaabf58f7ee76203f4265bf704d9d}{Blue}});}
+\DoxyCodeLine{140         \textcolor{keywordflow}{break};}
+\DoxyCodeLine{141         \textcolor{keywordflow}{case} 5: \mbox{\hyperlink{q3_8c_a5fc2432d3c2934944a0104828e4c3a29}{green\_only}}();}
+\DoxyCodeLine{142         \mbox{\hyperlink{q3_8c_acabaa26c4fa5946908bdab53a510a3d9}{write\_pixel\_data}}(\textcolor{stringliteral}{"Q3\_op\_red.dat"}, \mbox{\hyperlink{q3_8c_a6a4a463a45c6efd427de619db0cd4bfb}{Red}});}
+\DoxyCodeLine{143         \mbox{\hyperlink{q3_8c_acabaa26c4fa5946908bdab53a510a3d9}{write\_pixel\_data}}(\textcolor{stringliteral}{"Q3\_op\_green.dat"}, \mbox{\hyperlink{q3_8c_a7a7a73693454051ea5529d512eaed4c0}{Green}});}
+\DoxyCodeLine{144         \mbox{\hyperlink{q3_8c_acabaa26c4fa5946908bdab53a510a3d9}{write\_pixel\_data}}(\textcolor{stringliteral}{"Q3\_op\_blue.dat"}, \mbox{\hyperlink{q3_8c_a8a6eaabf58f7ee76203f4265bf704d9d}{Blue}});}
+\DoxyCodeLine{145         \textcolor{keywordflow}{break};}
+\DoxyCodeLine{146         \textcolor{keywordflow}{case} 6: \mbox{\hyperlink{q3_8c_a7b5470c35a4a91bd47431f0713795e23}{blue\_only}}();}
+\DoxyCodeLine{147         \mbox{\hyperlink{q3_8c_acabaa26c4fa5946908bdab53a510a3d9}{write\_pixel\_data}}(\textcolor{stringliteral}{"Q3\_op\_red.dat"}, \mbox{\hyperlink{q3_8c_a6a4a463a45c6efd427de619db0cd4bfb}{Red}});}
+\DoxyCodeLine{148         \mbox{\hyperlink{q3_8c_acabaa26c4fa5946908bdab53a510a3d9}{write\_pixel\_data}}(\textcolor{stringliteral}{"Q3\_op\_green.dat"}, \mbox{\hyperlink{q3_8c_a7a7a73693454051ea5529d512eaed4c0}{Green}});}
+\DoxyCodeLine{149         \mbox{\hyperlink{q3_8c_acabaa26c4fa5946908bdab53a510a3d9}{write\_pixel\_data}}(\textcolor{stringliteral}{"Q3\_op\_blue.dat"}, \mbox{\hyperlink{q3_8c_a8a6eaabf58f7ee76203f4265bf704d9d}{Blue}});}
+\DoxyCodeLine{150         \textcolor{keywordflow}{break};}
+\DoxyCodeLine{151         \textcolor{keywordflow}{case} 7: \mbox{\hyperlink{q3_8c_aff3098c1cb16051a97525648afd43f19}{get\_pixel}}();}
+\DoxyCodeLine{152         \textcolor{keywordflow}{break};}
+\DoxyCodeLine{153         \textcolor{keywordflow}{case} 8: \textcolor{keywordflow}{break};}
+\DoxyCodeLine{154         \textcolor{keywordflow}{default}: printf(\textcolor{stringliteral}{"\%s\(\backslash\)n"}, \textcolor{stringliteral}{"Please enter a valid input."});}
+\DoxyCodeLine{155     \}}
+\DoxyCodeLine{156 \}}
+\DoxyCodeLine{157     \textcolor{keywordflow}{while} (instruction!=8);}
+\DoxyCodeLine{158 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{q3_8c_adf77aa0c2a175e5d8296bf4cc6c6cc85}\label{q3_8c_adf77aa0c2a175e5d8296bf4cc6c6cc85}} 
+\index{q3.c@{q3.c}!read\_color\_data@{read\_color\_data}}
+\index{read\_color\_data@{read\_color\_data}!q3.c@{q3.c}}
+\doxysubsubsection{\texorpdfstring{read\_color\_data()}{read\_color\_data()}}
+{\footnotesize\ttfamily int$\ast$$\ast$ read\+\_\+color\+\_\+data (\begin{DoxyParamCaption}\item[{char $\ast$}]{file\+\_\+name }\end{DoxyParamCaption})}
+
+
+
+Read pixel data from the file and store it in a 2 D array. 
+
+
+
+Definition at line 5 of file q3.\+c.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{5                                         \{                           }
+\DoxyCodeLine{6     \textcolor{keywordtype}{int}** color\_array = (\textcolor{keywordtype}{int}**)malloc(953*\textcolor{keyword}{sizeof}(\textcolor{keywordtype}{int}*));            }
+\DoxyCodeLine{7     \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i = 0; i<953; i++)\{}
+\DoxyCodeLine{8         color\_array[i] = (\textcolor{keywordtype}{int}*)malloc(1268*\textcolor{keyword}{sizeof}(\textcolor{keywordtype}{int}));              }
+\DoxyCodeLine{9     \}}
+\DoxyCodeLine{10     FILE* color\_file = fopen(file\_name, \textcolor{stringliteral}{"r"});}
+\DoxyCodeLine{11 }
+\DoxyCodeLine{12     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < 953; i++)}
+\DoxyCodeLine{13         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} j = 0; j < 1268; j++)\{}
+\DoxyCodeLine{14             \textcolor{keywordflow}{if} (j != 1267)}
+\DoxyCodeLine{15                 fscanf(color\_file, \textcolor{stringliteral}{"\%d,"}, \&color\_array[i][j]);        }
+\DoxyCodeLine{16             \textcolor{keywordflow}{else}}
+\DoxyCodeLine{17                 fscanf(color\_file, \textcolor{stringliteral}{"\%d\(\backslash\)n"}, \&color\_array[i][j]);}
+\DoxyCodeLine{18 }
+\DoxyCodeLine{19         \}}
+\DoxyCodeLine{20 }
+\DoxyCodeLine{21     fclose(color\_file);}
+\DoxyCodeLine{22     \textcolor{keywordflow}{return} color\_array;}
+\DoxyCodeLine{23 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{q3_8c_acadb123ac381afe223a51c6fac2274e9}\label{q3_8c_acadb123ac381afe223a51c6fac2274e9}} 
+\index{q3.c@{q3.c}!red\_only@{red\_only}}
+\index{red\_only@{red\_only}!q3.c@{q3.c}}
+\doxysubsubsection{\texorpdfstring{red\_only()}{red\_only()}}
+{\footnotesize\ttfamily void red\+\_\+only (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Preserve any red shades in the image, but remove all green and blue. 
+
+
+
+Definition at line 72 of file q3.\+c.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{72                \{}
+\DoxyCodeLine{73     \mbox{\hyperlink{q3_8c_a64911f75dafad0eea57193e0e86a4846}{remove\_blue}}();}
+\DoxyCodeLine{74     \mbox{\hyperlink{q3_8c_a867b8487a8187730acf54f1586d92357}{remove\_green}}();}
+\DoxyCodeLine{75     \mbox{\hyperlink{q3_8c_a64911f75dafad0eea57193e0e86a4846}{remove\_blue}}();}
+\DoxyCodeLine{76 \}   }
+
+\end{DoxyCode}
+\mbox{\Hypertarget{q3_8c_a64911f75dafad0eea57193e0e86a4846}\label{q3_8c_a64911f75dafad0eea57193e0e86a4846}} 
+\index{q3.c@{q3.c}!remove\_blue@{remove\_blue}}
+\index{remove\_blue@{remove\_blue}!q3.c@{q3.c}}
+\doxysubsubsection{\texorpdfstring{remove\_blue()}{remove\_blue()}}
+{\footnotesize\ttfamily void remove\+\_\+blue (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Remove all Blue shades. 
+
+
+
+Definition at line 63 of file q3.\+c.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{63                   \{}
+\DoxyCodeLine{64 \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i = 0; i<953; i++)}
+\DoxyCodeLine{65     \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} j = 0; j<1268; j++)\{}
+\DoxyCodeLine{66         \textcolor{keywordflow}{if}((\mbox{\hyperlink{q3_8c_a8a6eaabf58f7ee76203f4265bf704d9d}{Blue}}[i][j] > \mbox{\hyperlink{q3_8c_a7a7a73693454051ea5529d512eaed4c0}{Green}}[i][j]) \&\& (\mbox{\hyperlink{q3_8c_a8a6eaabf58f7ee76203f4265bf704d9d}{Blue}}[i][j] > \mbox{\hyperlink{q3_8c_a6a4a463a45c6efd427de619db0cd4bfb}{Red}}[i][j]))}
+\DoxyCodeLine{67             \mbox{\hyperlink{q3_8c_a8a6eaabf58f7ee76203f4265bf704d9d}{Blue}}[i][j] = 0;}
+\DoxyCodeLine{68         \}}
+\DoxyCodeLine{69     \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{q3_8c_a867b8487a8187730acf54f1586d92357}\label{q3_8c_a867b8487a8187730acf54f1586d92357}} 
+\index{q3.c@{q3.c}!remove\_green@{remove\_green}}
+\index{remove\_green@{remove\_green}!q3.c@{q3.c}}
+\doxysubsubsection{\texorpdfstring{remove\_green()}{remove\_green()}}
+{\footnotesize\ttfamily void remove\+\_\+green (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Remove all Green shades. 
+
+
+
+Definition at line 54 of file q3.\+c.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{54                    \{}
+\DoxyCodeLine{55 \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i = 0; i<953; i++)}
+\DoxyCodeLine{56     \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} j = 0; j<1268; j++)\{}
+\DoxyCodeLine{57         \textcolor{keywordflow}{if}((\mbox{\hyperlink{q3_8c_a7a7a73693454051ea5529d512eaed4c0}{Green}}[i][j] > \mbox{\hyperlink{q3_8c_a6a4a463a45c6efd427de619db0cd4bfb}{Red}}[i][j]) \&\& (\mbox{\hyperlink{q3_8c_a7a7a73693454051ea5529d512eaed4c0}{Green}}[i][j] > \mbox{\hyperlink{q3_8c_a8a6eaabf58f7ee76203f4265bf704d9d}{Blue}}[i][j]))}
+\DoxyCodeLine{58             \mbox{\hyperlink{q3_8c_a7a7a73693454051ea5529d512eaed4c0}{Green}}[i][j] = 0;}
+\DoxyCodeLine{59         \}}
+\DoxyCodeLine{60     \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{q3_8c_a500c91ef1c3f150fa910b40d395fe78d}\label{q3_8c_a500c91ef1c3f150fa910b40d395fe78d}} 
+\index{q3.c@{q3.c}!remove\_red@{remove\_red}}
+\index{remove\_red@{remove\_red}!q3.c@{q3.c}}
+\doxysubsubsection{\texorpdfstring{remove\_red()}{remove\_red()}}
+{\footnotesize\ttfamily void remove\+\_\+red (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Remove all Red shades. 
+
+
+
+Definition at line 45 of file q3.\+c.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{45                  \{}
+\DoxyCodeLine{46 \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i = 0; i<953; i++)}
+\DoxyCodeLine{47     \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} j = 0; j<1268; j++)\{}
+\DoxyCodeLine{48         \textcolor{keywordflow}{if}((\mbox{\hyperlink{q3_8c_a6a4a463a45c6efd427de619db0cd4bfb}{Red}}[i][j] > \mbox{\hyperlink{q3_8c_a7a7a73693454051ea5529d512eaed4c0}{Green}}[i][j]) \&\& (\mbox{\hyperlink{q3_8c_a6a4a463a45c6efd427de619db0cd4bfb}{Red}}[i][j] > \mbox{\hyperlink{q3_8c_a8a6eaabf58f7ee76203f4265bf704d9d}{Blue}}[i][j]))}
+\DoxyCodeLine{49             \mbox{\hyperlink{q3_8c_a6a4a463a45c6efd427de619db0cd4bfb}{Red}}[i][j] = 0;}
+\DoxyCodeLine{50     \}}
+\DoxyCodeLine{51 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{q3_8c_acabaa26c4fa5946908bdab53a510a3d9}\label{q3_8c_acabaa26c4fa5946908bdab53a510a3d9}} 
+\index{q3.c@{q3.c}!write\_pixel\_data@{write\_pixel\_data}}
+\index{write\_pixel\_data@{write\_pixel\_data}!q3.c@{q3.c}}
+\doxysubsubsection{\texorpdfstring{write\_pixel\_data()}{write\_pixel\_data()}}
+{\footnotesize\ttfamily void write\+\_\+pixel\+\_\+data (\begin{DoxyParamCaption}\item[{char $\ast$}]{file,  }\item[{int $\ast$$\ast$}]{color\+\_\+info }\end{DoxyParamCaption})}
+
+
+
+Create an output file by reading pixel data from the 2D array. 
+
+
+
+Definition at line 26 of file q3.\+c.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{26                                                      \{}
+\DoxyCodeLine{27     FILE* color\_array;}
+\DoxyCodeLine{28     color\_array = fopen(file, \textcolor{stringliteral}{"w"});}
+\DoxyCodeLine{29 }
+\DoxyCodeLine{30     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < 953; i++)}
+\DoxyCodeLine{31         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} j = 0; j < 1268; j++)\{}
+\DoxyCodeLine{32             \textcolor{keywordflow}{if} (j != 1267 )}
+\DoxyCodeLine{33                 fprintf(color\_array, \textcolor{stringliteral}{"\%d,"}, color\_info[i][j] );}
+\DoxyCodeLine{34             \textcolor{keywordflow}{else} }
+\DoxyCodeLine{35                 fprintf(color\_array, \textcolor{stringliteral}{"\%d\(\backslash\)n"}, color\_info[i][j] );}
+\DoxyCodeLine{36         \}}
+\DoxyCodeLine{37         fclose(color\_array);}
+\DoxyCodeLine{38 \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{q3_8c_a8a6eaabf58f7ee76203f4265bf704d9d}\label{q3_8c_a8a6eaabf58f7ee76203f4265bf704d9d}} 
+\index{q3.c@{q3.c}!Blue@{Blue}}
+\index{Blue@{Blue}!q3.c@{q3.c}}
+\doxysubsubsection{\texorpdfstring{Blue}{Blue}}
+{\footnotesize\ttfamily int$\ast$$\ast$ Blue}
+
+
+
+Definition at line 42 of file q3.\+c.
+
+\mbox{\Hypertarget{q3_8c_a7a7a73693454051ea5529d512eaed4c0}\label{q3_8c_a7a7a73693454051ea5529d512eaed4c0}} 
+\index{q3.c@{q3.c}!Green@{Green}}
+\index{Green@{Green}!q3.c@{q3.c}}
+\doxysubsubsection{\texorpdfstring{Green}{Green}}
+{\footnotesize\ttfamily int$\ast$$\ast$ Green}
+
+
+
+Definition at line 41 of file q3.\+c.
+
+\mbox{\Hypertarget{q3_8c_a6a4a463a45c6efd427de619db0cd4bfb}\label{q3_8c_a6a4a463a45c6efd427de619db0cd4bfb}} 
+\index{q3.c@{q3.c}!Red@{Red}}
+\index{Red@{Red}!q3.c@{q3.c}}
+\doxysubsubsection{\texorpdfstring{Red}{Red}}
+{\footnotesize\ttfamily int$\ast$$\ast$ Red}
+
+
+
+Definition at line 40 of file q3.\+c.
+
